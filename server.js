@@ -20,10 +20,11 @@ app.use(expressLayouts)
 // connect to db
 const db = require('./config/db');
 
+// //importRoutes
+const indexRouter = require('./routes/index');
 
-//importRoutes
-const mallRouter= require("./routes/mall");
-
+//mountRoutes
+app.use("/", indexRouter);
 
 //mountRoutes
 app.use('/mall', mallRouter);
