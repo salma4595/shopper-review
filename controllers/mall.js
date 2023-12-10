@@ -57,6 +57,7 @@ exports.mall_delete_get= (req,res) =>{
 exports.mall_show_get= (req,res) =>{
     console.log(req.query.id);
     Mall.findById(req.query.id)
+    .populate('shop')
     .then((mall) => {
         res.render("mall/detail", {mall})
     })
