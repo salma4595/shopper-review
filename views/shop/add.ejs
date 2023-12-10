@@ -1,7 +1,16 @@
 <form action="/shop/add" method="POST">
-    <label for="name">Shop Name</label>
-    <input type="text" name="name">
-    <label for="category">Category</label>
-    <input type="text" name="category">
+    <label for="name" class="form-control">Shop Name</label>
+    <input type="text" name="name" class="form-control">
+    <label for="category" class="form-control">Category</label>
+    <input type="text" name="category" class="form-control">
+    <div>
+        <label>Mall</label>
+        <select name="mall" class="form-control">
+            <% malls.forEach(function (mall) { %>
+                <option value="<%= mall._id %>"><%= mall.nameOfMall %></option>
+            <% }) %>
+        </select>
+    </div>
+    <br>
     <button type="submit">Add new shop</button>
 </form>
