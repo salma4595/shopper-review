@@ -22,5 +22,19 @@
             </tr>
             <%})%>
     </table>
+    <div class="row">
+        <% shops.forEach(function(shop) {%>
+            <div class="col-sm-4">
+                <div class="card mx-auto">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title"><%=shop.name%></h5>
+                    <p class="card-text"><%=shop.description%></p>
+                    <a href="/shop/detail?id=<%=shop._id%>" class="btn btn-primary">View Shop</a>
+                    </div>
+                </div>
+            </div>
+        <%})%>
+    </div>
 </body>
 </html>

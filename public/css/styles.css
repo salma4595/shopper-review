@@ -34,3 +34,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary{
 .nav-link{
    color: var(--default);
 }
+
+.card {
+    height: 300px;
+}
