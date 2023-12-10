@@ -25,10 +25,14 @@ app.use('/shop', shopRouter);
 // connect to db
 const db = require('./config/db');
 
-
-//importRoutes
+// //importRoutes
+const indexRouter = require('./routes/index');
 
 //mountRoutes
+app.use("/", indexRouter);
+
+//mountRoutes
+app.use('/mall', mallRouter);
 
 // Setup server
 const PORT = process.env.PORT;

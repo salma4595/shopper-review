@@ -7,3 +7,13 @@ const {Mall} = require("../models/Mall");
 // HTTP GET - Read - Retrives the data
 // HTTP PUT - update - update the data
 //HTTP Delete/GET/POST - delete- delete the data
+
+exports.mall_index_get= (req, res) =>{
+    Mall.find()
+    .then(() =>{
+        res.render("mall/index");
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+}
