@@ -22,8 +22,11 @@ const db = require('./config/db');
 
 
 //importRoutes
+const mallRouter= require("./routes/mall");
+
 
 //mountRoutes
+app.use('/mall', mallRouter);
 
 // Setup server
 const PORT = process.env.PORT;
