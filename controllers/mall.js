@@ -56,10 +56,14 @@ exports.mall_delete_get= (req,res) =>{
 
 exports.mall_show_get= (req,res) =>{
     console.log(req.query.id);
+    let shops = '';
+    // get the shops where are located inside the mall
     Mall.findById(req.query.id)
-    .populate('shop')
     .then((mall) => {
-        res.render("mall/detail", {mall})
+        Shop.find({mall: req.query.id})
+        .then((shops) => {
+            res.render("mall/detail", {mall, shops})
+        })
     })
     .catch((err) => {
         console.log(err);
