@@ -6,6 +6,17 @@
     <title>Shop index</title>
 </head>
 <body>
-    <h1>Hello from shop page</h1>
+    <table>
+        <tr>
+            <th>Shop Name</th>
+            <th>Category</th>
+        </tr>
+        <% shops.forEach(function(shop) {%>
+            <tr>
+                <td><a href="/shop/detail?id=<%=shop._id%>"><%=shop.name%></a></td>
+                <td><%=shop.category%></td>
+            </tr>
+            <%})%>
+    </table>
 </body>
 </html>
