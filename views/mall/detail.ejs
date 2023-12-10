@@ -21,5 +21,8 @@
 </div>
 
 <div>
-    Shops: <%= mall.shop %>
+    <h2>Shops:</h2>
+    <% shops.forEach(function(shop) {%>
+        <p><%= shop.name %></p>
+    <%})%>
 </div>
