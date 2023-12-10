@@ -3,6 +3,11 @@ require('dotenv').config();
 
 const app = express();
 
+// Import and configre routes
+const shopRouter = require('./routes/shop');
+
+app.use('/shop', shopRouter);
+
 // connect to db
 const db = require('./config/db');
 
