@@ -11,6 +11,11 @@ const mallSchema = mongoose.Schema({
         type:String,
         }
     ],
+    shop: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Shop'
+        },
+
     }, {
         timestamps: true, //create date and update date 
     });
