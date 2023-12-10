@@ -17,6 +17,11 @@ app.use(express.static("public"));
 //Nodejs to look into views folder for the file named layout.ejs
 app.use(expressLayouts)
 
+// Import and configre routes
+const shopRouter = require('./routes/shop');
+
+app.use('/shop', shopRouter);
+
 // connect to db
 const db = require('./config/db');
 
