@@ -1,4 +1,5 @@
 const Shop = require('../models/Shop');
+const {Mall} = require('../models/Mall');
 
 // get index page
 exports.shop_index_get = (req, res) => {
@@ -24,7 +25,14 @@ exports.shop_detail_get = (req, res) => {
 
 // get add shop page
 exports.shop_add_get = (req, res) => {
-    res.render('shop/add');
+    Mall.find()
+    .then((malls) => {
+        console.log
+        res.render('shop/add', {malls});
+    })
+    .catch((err) => {
+        console.log(err);
+    })
 }
 
 exports.shop_add_post = (req, res) => {
