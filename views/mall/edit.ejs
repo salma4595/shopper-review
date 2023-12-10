@@ -1,0 +1,35 @@
+<h1>Edit Mall</h1>
+
+<form method="POST" action="/mall/update">
+
+    <div>
+        <label> name </label>
+        <input type="text" name="nameOfMall" value="<%=mall.nameOfMall %>" />
+    </div>
+    <div>
+        <label> rating </label>
+        <textarea type="number" name="rating"><%=mall.rating %></textarea>
+    </div>
+  
+   
+    <div>
+        <label> location </label>
+        <input type="text" name="location" value="<%=mall.location %>" />
+    </div>
+
+    <div>
+        <label> openingHour </label>
+        <input type="text" name="openingHour" value="<%=mall.openingHour %>" />
+    </div>
+
+    <div>
+        <label> PhoneNumber </label>
+        <input type="text" name="PhoneNumber" value="<%=mall.PhoneNumber %>" />
+    </div>
+
+
+    <input type="hidden" name="id" value="<%=mall._id%>"/>
+    <div>
+        <button>Update mall</button>
+    </div>
+</form>

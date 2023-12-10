@@ -1,5 +1,5 @@
 //API's Function 
-
+const Shop = require('../models/Shop');
 const {Mall} = require("../models/Mall");
 
 // CRUD operations
@@ -57,6 +57,7 @@ exports.mall_delete_get= (req,res) =>{
 exports.mall_show_get= (req,res) =>{
     console.log(req.query.id);
     Mall.findById(req.query.id)
+    .populate('shop')
     .then((mall) => {
         res.render("mall/detail", {mall})
     })
@@ -66,9 +67,22 @@ exports.mall_show_get= (req,res) =>{
 }
 
 exports.mall_edit_get= (req,res) =>{
-
+    Mall.findByIdAndUpdate(req.query.id)
+    .then((mall) => {
+        res.render("mall/edit", {mall});
+    })
+    .catch((err) => {
+        console.log(err);
+    })
 }
 
 exports.mall_update_post= (req,res) =>{
-    
+    console.log(req.body.id)
+    Mall.findByIdAndUpdate(req.body.id, req.body)
+    .then(() => {
+        res.redirect("/mall/index");
+    })
+    .catch((err) => {
+        console.log(err);
+    })
 }

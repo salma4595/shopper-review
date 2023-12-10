@@ -6,11 +6,11 @@ const mallSchema = mongoose.Schema({
     location:String,
     openingHour:String,
     PhoneNumber: Number,
-    MallImages: [
-        {
-        type:String,
-        }
-    ],
+    shop: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Shop'
+        },
+
     }, {
         timestamps: true, //create date and update date 
     });
