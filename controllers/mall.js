@@ -17,3 +17,8 @@ exports.mall_index_get= (req, res) =>{
         console.log(err);
     })
 }
+
+
+exports.mall_create_get= (req, res) =>{
+
+}

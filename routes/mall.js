@@ -7,7 +7,7 @@ const MallCntrl= require("../controllers/mall")
 // router.use(methodOverride('_method'));
 
 //Routes
-// router.get("/add", MallCntrl.mall_create_get);
+router.get("/add", MallCntrl.mall_create_get);
 // router.post("/add", MallCntrl.mall_create_post);
 router.get("/index", MallCntrl.mall_index_get);
 // router.get("/detail", MallCntrl.mall_show_get);
