@@ -27,8 +27,6 @@ exports.mall_create_get= (req, res) =>{
 exports.mall_create_post= (req, res) =>{
     console.log(req.body)
     let mall= new Mall(req.body); // depend on controllers
-
-
 //save author
 mall.save()  // depend on constant 
 .then(() => {
