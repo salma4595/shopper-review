@@ -2,27 +2,30 @@
 
 <form method="POST" action="/mall/add" >
 
-    <div>
-        <label> Name of Mall </label>
-        <input type="text" name="nameOfMall" />
+    <div class="mb-3">
+        <label class="form-label"> Name of Mall </label>
+        <input type="text" name="nameOfMall" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label"> About the Mall </label>
+        <textarea name="aboutOfMall" class="form-control" ></textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label"> Rating </label>
+        <input type="number" name="rating" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Location</label>
+        <input type="String" name="location" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Opening Hours</label>
+        <input type="String" name="openingHour" class="form-control"/>
     </div>
 
     <div>
-        <label> Rating </label>
-        <input type="number" name="rating"/>
-    </div>
-    <div>
-        <label>Location</label>
-        <input type="String" name="location"/>
-    </div>
-    <div>
-        <label>Opening Hours</label>
-        <input type="String" name="openingHour"/>
-    </div>
-
-    <div>
-        <label>Contact Information</label>
-        <input type="String" name="PhoneNumber"/>
+        <label class="form-label">Contact Information</label>
+        <input type="String" name="PhoneNumber" class="form-control"/>
     </div>
 
 

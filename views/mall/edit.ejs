@@ -3,6 +3,10 @@
 <form method="POST" action="/mall/update">
 
     <div>
+        <label> About the Mall </label>
+        <textarea name="aboutOfMall"><%=mall.aboutOfMall %></textarea>
+    </div>
+    <div>
         <label> name </label>
         <input type="text" name="nameOfMall" value="<%=mall.nameOfMall %>" />
     </div>
@@ -23,7 +27,7 @@
     </div>
 
     <div>
-        <label> PhoneNumber </label>
+        <label> Contact </label>
         <input type="text" name="PhoneNumber" value="<%=mall.PhoneNumber %>" />
     </div>
 
