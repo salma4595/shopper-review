@@ -8,6 +8,7 @@ googleId:{
     required: true
 },
 email: String,
+userType: String,
 },{timestamps: true})
 
 module.exports = mongoose.model('user', userSchema)

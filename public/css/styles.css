@@ -1,0 +1,17 @@
+body{
+    background-color:;
+    padding: 10%;
+}
+
+footer{
+    padding: 5%;
+    text-align: center;
+    background-color: grey;
+    margin: 0 auto;
+}
+
+.headerClass{
+    padding: 10%;
+    text-decoration: none;
+  
+}

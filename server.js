@@ -20,14 +20,14 @@ app.use(expressLayouts)
 // connect to db
 const db = require('./config/db');
 
+
 // //importRoutes
 const indexRouter = require('./routes/index');
+
 
 //mountRoutes
 app.use("/", indexRouter);
 
-//mountRoutes
-app.use('/mall', mallRouter);
 
 // Setup server
 const PORT = process.env.PORT;
