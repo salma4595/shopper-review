@@ -19,3 +19,10 @@
 <div>
     Updated@: <%= mall.updatedAt %>
 </div>
+
+<div>
+    <h2>Shops:</h2>
+    <% shops.forEach(function(shop) {%>
+        <p><%= shop.name %></p>
+    <%})%>
+</div>
