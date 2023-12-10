@@ -1,11 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mall index</title>
-</head>
-<body>
-    <h1>This is Mall page!</h1>
-</body>
-</html>
+
+<h1>Malls Details </h1>
+
+<table>
+    <tr>
+        <th>Name of mall</th>
+        <th>Rating</th>
+        <th>Location</th>
+        <th>Opening Hours</th>
+        <th>Phone Number</th>
+        <th>Created At</th>
+        <th>Edit mall</th>
+        <th>Delete mall</th>
+        
+    </tr> 
+    <!-- <% malls.forEach(function (mall) { %> malls depent on creat get -->
+       <tr>
+        <td>
+           <a href="/mall/detail?id=<%= mall._id %>">
+           <%= mall.nameOfMall %>
+         </a></td>
+       
+        
+        <td> <%= mall.rating %> </td>
+        <td> <%= mall.location %> </td>
+        <td> <%= mall.openingHour%> </td>
+        <td> <%= mall.PhoneNumber%> </td>
+        <td> <%= mall.createdAt %> </td>
+    
+        
+        <td><a href="/mall/edit?id=<%= mall._id%>">Edit Mall</a></td>
+        <td><a href="/mall/delete?id=<%= mall._id%>">Delete Mall</a></td>
+    </tr>
+        
+        <%});%>
+    
+</table>
