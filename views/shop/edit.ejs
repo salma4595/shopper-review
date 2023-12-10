@@ -1,0 +1,35 @@
+<h1>Edit Shop</h1>
+
+<form method="POST" action="/shop/edit">
+
+    <div>
+        <label> name </label>
+        <input type="text" name="name" value="<%=shop.name %>" />
+    </div>
+    <div>
+        <label> rating </label>
+        <textarea type="number" name="rating"><%=shop.rating %></textarea>
+    </div>
+  
+   
+    <div>
+        <label> location </label>
+        <input type="text" name="location" value="<%=shop.location %>" />
+    </div>
+
+    <div>
+        <label> Working Hours </label>
+        <input type="text" name="workingHours" value="<%=shop.workingHours %>" />
+    </div>
+
+    <div>
+        <label> Phone Number </label>
+        <input type="number" name="contactNumber" value="<%=shop.contactNumber %>" />
+    </div>
+
+
+    <input type="hidden" name="id" value="<%=shop._id%>"/>
+    <div>
+        <button>Update shop</button>
+    </div>
+</form>
