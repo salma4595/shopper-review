@@ -38,3 +38,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary{
 .card {
     height: 300px;
 }
+
+.card-text {
+    height: 100px;
+}
