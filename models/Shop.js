@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 // TODO... Add reviews
 const shopSchema = mongoose.Schema({
+    "name": String,
     "category": String,
     "id": Number,
     "mallId": Number,

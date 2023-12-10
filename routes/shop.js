@@ -7,4 +7,7 @@ const shopController = require('../controllers/shop');
 // GET /index
 router.get('/index', shopController.shop_index_get);
 
+// GET /add
+router.get('/add', shopController.shop_add_get);
+
 module.exports = router;
