@@ -10,11 +10,15 @@
         <tr>
             <th>Shop Name</th>
             <th>Category</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         <% shops.forEach(function(shop) {%>
             <tr>
                 <td><a href="/shop/detail?id=<%=shop._id%>"><%=shop.name%></a></td>
                 <td><%=shop.category%></td>
+                <td><a href="/shop/edit?id=<%=shop._id%>">Edit</a></td>
+                <td><a href="/shop/delete?id=<%=shop._id%>">Delete</a></td>
             </tr>
             <%})%>
     </table>

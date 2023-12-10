@@ -67,7 +67,7 @@ exports.mall_show_get= (req,res) =>{
 }
 
 exports.mall_edit_get= (req,res) =>{
-    Mall.findByIdAndUpdate(req.query.id)
+    Mall.findById(req.query.id)
     .then((mall) => {
         res.render("mall/edit", {mall});
     })
