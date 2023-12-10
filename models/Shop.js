@@ -4,12 +4,11 @@ const mongoose = require('mongoose');
 const shopSchema = mongoose.Schema({
     "name": String,
     "category": String,
-    "mall": [
+    "mall":
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Mall'
-        }
-    ],
+        },
     "location": String,
     "description": String,
     "images": [
