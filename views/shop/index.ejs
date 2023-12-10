@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop index</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Shop Name</th>
+            <th>Category</th>
+        </tr>
+        <% shops.forEach(function(shop) {%>
+            <tr>
+                <td><a href="/shop/detail?id=<%=shop._id%>"><%=shop.name%></a></td>
+                <td><%=shop.category%></td>
+            </tr>
+            <%})%>
+    </table>
+</body>
+</html>
