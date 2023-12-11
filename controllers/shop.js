@@ -73,7 +73,7 @@ exports.shop_add_get = (req, res) => {
 }
 
 exports.shop_add_post = (req, res) => {
-    console.log(req.body);
+    console.log(`Adding new shop: \n ${req.body}`);
     let shop = new Shop(req.body);
     shop.save()
     .then(() => {
@@ -83,4 +83,9 @@ exports.shop_add_post = (req, res) => {
     .catch((err) => {
         console.log(err);
     })
+}
+
+// upload image
+exports.shop_thumbnail_post = (req, res) => {
+    // add image thumbnail path to the database
 }

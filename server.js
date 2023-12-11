@@ -8,6 +8,9 @@ const app = express();
 //port configuration 
 const port = process.env.PORT;
 
+// url encoded config
+app.use(express.urlencoded({extended: true}));
+
 //Node.js look into the folder called views for all the ejs files 
 app.set("view engine", "ejs");
 

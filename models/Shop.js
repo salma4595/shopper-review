@@ -11,6 +11,7 @@ const shopSchema = mongoose.Schema({
         },
     "location": String,
     "description": String,
+    "thumbnail": String,
     "images": [
         {
             type: String
