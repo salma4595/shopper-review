@@ -2,8 +2,22 @@ const express = require('express');
 const router = express.Router();
 const shopController = require('../controllers/shop');
 
+const multer = require('multer');
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './public/uploads/')
+    },
+    filename: function (req, file, cb) {
+        let filename = file.fieldname + '-' + Date.now() + '-' + file.originalname;
+        // var name for img
+        req.body.thumbnail = `/uploads/${filename}`;
+      cb(null, filename)
+    }
+  })
+  let upload = multer({ storage: storage })
+
 // Middlewares
-router.use(express.urlencoded({extended: true}));
+// router.use(express.urlencoded({extended: true}));
 
 // All routes start with /shop
 
@@ -14,7 +28,8 @@ router.get('/index', shopController.shop_index_get);
 router.get('/add', shopController.shop_add_get);
 
 // POST /add
-router.post('/add', shopController.shop_add_post);
+// this cuased an error
+router.post('/add', upload.single('file_image'), shopController.shop_add_post);
 
 // GET /detail
 router.get('/detail', shopController.shop_detail_get);
@@ -28,9 +43,7 @@ router.post('/edit', shopController.shop_edit_post);
 // GET /delete
 router.get('/delete', shopController.shop_delete_get);
 
+// POST /upload
+// router.post('/upload', upload.single('image'), shopController.shop_thumbnail_post);
 
-
-
-
-//Export Routes
 module.exports = router;

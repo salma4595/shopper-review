@@ -13,6 +13,9 @@ const app = express();
 //port configuration 
 const port = process.env.PORT;
 
+// url encoded config
+app.use(express.urlencoded({extended: true}));
+
 
 require('./config/passport');
 ///we can configure and mount the session middleware
