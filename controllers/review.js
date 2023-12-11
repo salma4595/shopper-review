@@ -9,7 +9,7 @@ const Review = require("../models/Review");
 //HTTP Delete/GET/POST - delete- delete the data
 
 exports.review_index_get= (req, res) =>{
-    Review.find() 
+    Review.find().populate('shop')
     .then((reviews) =>{
         res.render("review/index",{reviews});
     })
