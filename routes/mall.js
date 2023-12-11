@@ -16,4 +16,10 @@ router.get("/edit", MallCntrl.mall_edit_get);
 router.post("/update", MallCntrl.mall_update_post);
 
 
+
+
+
+
+
+
 module.exports = router;

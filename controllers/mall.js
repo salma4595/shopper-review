@@ -1,6 +1,7 @@
 //API's Function 
 const Shop = require('../models/Shop');
 const {Mall} = require("../models/Mall");
+const Review = require("../models/Review");
 
 // CRUD operations
 //HTTP POST- Create - Post the data 
