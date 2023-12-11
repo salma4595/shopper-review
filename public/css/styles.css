@@ -42,3 +42,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary{
 .card-text {
     height: 100px;
 }
+
+.col-sm-10{
+    display:flex;
+}

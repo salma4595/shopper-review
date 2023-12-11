@@ -1,5 +1,6 @@
 const Shop = require('../models/Shop');
 const {Mall} = require('../models/Mall');
+const Review = require("../models/Review");
 
 // get index page
 exports.shop_index_get = (req, res) => {
