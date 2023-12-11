@@ -24,10 +24,12 @@ const db = require('./config/db');
 const indexRouter = require('./routes/index');
 const mallRouter= require("./routes/mall");
 const shopRouter = require('./routes/shop');
+const userRouter = require('./routes/user',)
 
 app.use('/shop', shopRouter);
 app.use("/", indexRouter);
 app.use('/mall', mallRouter);
+app.use('/user', userRouter)
 
 // Setup server
 const PORT = process.env.PORT;
