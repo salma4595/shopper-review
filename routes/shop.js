@@ -29,7 +29,7 @@ router.get('/add', shopController.shop_add_get);
 
 // POST /add
 // this cuased an error
-router.post('/add', upload.single('image'), shopController.shop_add_post);
+router.post('/add', upload.single('file_image'), shopController.shop_add_post);
 
 // GET /detail
 router.get('/detail', shopController.shop_detail_get);

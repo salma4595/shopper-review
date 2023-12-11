@@ -1,0 +1,45 @@
+<h1>Edit review</h1>
+
+<form method="POST" action="/review/update">
+
+    <div>
+        <label> Review Id </label>
+        <input type="text" name="id" value="<%=review._id%>"readonly/>
+    </div>
+    <div>
+        <label> Shop name </label>
+        <a href="/review/detail?id=<%= review._id %>">
+            <%= review.shop %>
+          </a>
+    </div>
+    
+
+
+    <div>
+        <label>Rating</label>
+        <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+  
+   
+    
+
+   
+
+    <div>
+        <label> Comment </label>
+        
+        <textarea name="comment"><%=review.comment %></textarea>
+    </div>
+
+
+    <input type="hidden" name="id" value="<%=review._id%>"/>
+    <div>
+        <button>Update review</button>
+    </div>
+</form>

@@ -17,7 +17,7 @@ router.post('/add', userCtrl.user_create_post)
 ///retreiving user
 router.get('/index', userCtrl.user_index_get)
 ////
-router.get('/show', userCtrl.user_show_get)
+router.get('/detail', userCtrl.user_detail_get)
 ///edit data and send back
 router.get('/edit', userCtrl.user_edit_get)
 router.post('/edit', userCtrl.user_edit_post)

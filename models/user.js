@@ -3,10 +3,10 @@ const Schema = mongoose.Schema
 
 const userSchema = new Schema({
 name: String,
-// googleId:{
-//     type:String,
-//     required: true
-// },
+googleId:{
+    type:String,
+    required: true
+},
 email: String,
 userType: String,
 },{timestamps: true})

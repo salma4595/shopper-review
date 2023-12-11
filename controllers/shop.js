@@ -1,5 +1,6 @@
 const Shop = require('../models/Shop');
 const {Mall} = require('../models/Mall');
+const Review = require("../models/Review");
 
 // get index page
 exports.shop_index_get = (req, res) => {
@@ -73,7 +74,8 @@ exports.shop_add_get = (req, res) => {
 }
 
 exports.shop_add_post = (req, res) => {
-    console.log(`Adding new shop: \n ${req.body}`);
+    console.log('inside shop_edit_post');
+    // console.log(`Adding new shop: \n ${req.body}`);
     let shop = new Shop(req.body);
     shop.save()
     .then(() => {
