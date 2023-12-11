@@ -24,21 +24,58 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               
+              <% if(user) { %>
+
               <li class="nav-item">
                 <a class="nav-link" href="/mall/index">Mall Directory</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/shop/index"> Shop Directory</a>
-              </li>
+            
               <li class="nav-item">
                 <a class="nav-link" href="/mall/add">Add Mall</a>
               </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/shop/index"> Shop Directory</a>
+              </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="/shop/add">Add Shop</a>
               </li>
+              
+              <li class="nav-item">
+                <a href="/user/index" class="nav-link">Users</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="/user/add" class="nav-link">Add User</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="/logout" class="nav-link">Logout</a>
+              </li>
+             
+
+         
+              <% } else { %>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="/mall/index">Mall Directory</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/shop/index"> Shop Directory</a>
+                </li>
+
+              <li class="nav-item">
+                <a href="/aot/google" class="nav-link">Login</a>
+              </li>
+              <% } %>
+
+            
+
               <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Directory
+                    Directory btn btn-outline-primary
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="/shop/index">Shops Directory</a></li>
