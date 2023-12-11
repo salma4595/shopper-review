@@ -7,13 +7,13 @@
         <th>Rating</th>
         <th>Location</th>
         <th>Opening Hours</th>
-        <th>Phone Number</th>
+        <th>Contact</th>
         <th>Created At</th>
         <th>Edit mall</th>
         <th>Delete mall</th>
         
     </tr> 
-    <!-- <% malls.forEach(function (mall) { %> malls depent on creat get -->
+    <% malls.forEach(function (mall) { %> 
        <tr>
         <td>
            <a href="/mall/detail?id=<%= mall._id %>">
@@ -33,5 +33,32 @@
     </tr>
         
         <%});%>
-    
 </table>
+<div class="row">
+    <% malls.forEach(function(mall) {%>
+        <div class="col-sm-4">
+            <div class="card mx-auto mt-3">
+                <img src="#" class="card-img-top" alt="#">
+                <div class="card-body">
+                    <h5 class="card-title"><%=mall.nameOfMall%></h5>
+                    <p class="card-text"><%=mall.aboutOfMall%></p>
+                    
+                    <br>
+                    
+                    <a href="/mall/detail?id=<%=mall._id%>" class="btn btn-primary">View Mall</a>
+                
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><%=mall.rating%> stars</small>
+                    <% for(let i = 1; i <= 5; i++) {%>
+                        <% if(i <= mall.rating) { %>
+                            <i class="bi bi-star-fill"></i>
+                        <%} else{%>
+                            <i class="bi bi-star"></i>
+                        <%}%>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    <%})%>
+</div>

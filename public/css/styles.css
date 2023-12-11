@@ -1,0 +1,44 @@
+:root{
+    --default:#121213;
+    --wrong:#C8B8DB;
+    --right:#3E6990;
+}
+
+body{
+    padding: 20px;
+}
+
+footer.navbar.fixed-bottom.bg-body-tertiary{
+    color: var(--default);
+    padding: 20px ;
+    padding-bottom: 3px ;
+    background-color: var(--wrong);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+}
+
+.footer{
+margin: 10px;
+font-size: 15px;
+}
+
+nav.navbar.navbar-expand-lg.bg-body-tertiary{
+    background-color: var(--wrong);
+   
+}
+
+.navbar-brand{
+    color: var(--default);
+}
+
+.nav-link{
+   color: var(--default);
+}
+
+.card {
+    height: 300px;
+}
+
+.card-text {
+    height: 100px;
+}

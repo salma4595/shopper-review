@@ -51,6 +51,7 @@ exports.shop_delete_get = (req, res) => {
 exports.shop_detail_get = (req, res) => {
     // get the shop from DB
     Shop.findById(req.query.id)
+    .populate('mall')
     .then((shop) => {
         res.render('shop/detail', {shop});
     })
