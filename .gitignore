@@ -75,3 +75,6 @@ dist/
 # Windows
 Thumbs.db
 Desktop.ini
+
+# upload folder
+public/uploads
