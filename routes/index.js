@@ -1,9 +1,8 @@
 ///things we require
 const express = require('express')
 ///require passport
-const passport = require('passport')
-
 const router = express.Router()
+const passport = require('passport')
 
 ///require the controller
 const indexCtrl = require('../controllers/index')

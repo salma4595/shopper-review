@@ -26,6 +26,11 @@ app.use(session({
 ///mount passport
 app.use(passport.initialize());
 app.use(passport.session());
+///now user can be used in ejs template
+app.use(function (req, res, next) {
+    res.locals.user = req.user;
+    next();
+  })
 
 //Node.js look into the folder called views for all the ejs files 
 app.set("view engine", "ejs");
