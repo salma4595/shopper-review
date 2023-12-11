@@ -1,0 +1,61 @@
+
+<h1>Reviews Details </h1>
+
+<table>
+    <tr>
+       
+        <th>Shop</th>
+        <th>Rating</th>
+        <th>Comment</th>
+        <th>Created At</th>
+        <th>Edit Review</th>
+        <th>Delete Review</th>
+        
+    </tr> 
+    <% reviews.forEach(function (review) { %> 
+       <tr>
+        <td>
+           <a href="/review/detail?id=<%= review._id %>">
+           <%= review.shop %>
+         </a>
+        </td>
+       
+        <td> <%= review.rating %> </td>
+        <td> <%= review.comment%> </td>
+        <td> <%= review.createdAt %> </td>
+    
+        
+        <td><a href="/review/edit?id=<%= review._id%>">Edit review</a></td>
+        <td><a href="/review/delete?id=<%= review._id%>">Delete review</a></td>
+    </tr>
+        
+        <%});%>
+</table>
+<div class="row">
+    <% reviews.forEach(function(review) {%>
+        <div class="col-sm-4">
+            <div class="card mx-auto mt-3">
+                <img src="#" class="card-img-top" alt="#">
+                <div class="card-body">
+                    <h5 class="card-title"><%=review.user%></h5>
+                    <p class="card-text"><%=review.shop%></p>
+                    
+                    <br>
+                    
+                    <a href="/review/detail?id=<%=review._id%>" class="btn btn-primary">View review</a>
+                
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><%=review.rating%> stars</small>
+                    <% for(let i = 1; i <= 5; i++) {%>
+                        <% if(i <= review.rating) { %>
+                            <i class="bi bi-star-fill"></i>
+                        <%} else{%>
+                            <i class="bi bi-star"></i>
+                        <%}%>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    <%})%>
+</div>

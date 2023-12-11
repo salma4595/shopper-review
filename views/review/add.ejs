@@ -1,0 +1,34 @@
+<h1>Add Review</h1>
+
+<form method="POST" action="/review/add" >
+
+    <label>Shop</label>
+    <select name="shop" class="form-control">
+        <% shops.forEach(function (shop) { %>
+            <option value="<%= shop._id %>"><%= shop.name %></option>
+        <% }) %>
+    </select>
+    
+     
+    <div class="mb-3">
+        <label class="form-label">Rating</label>
+        <select name="rating" class="form-select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">comment</label>
+       
+        <textarea name="comment" class="form-control" ></textarea>
+    </div>
+   
+
+
+    <div>
+        <button type="submit">Create Review</button>
+    </div>
+</form>
