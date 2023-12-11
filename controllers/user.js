@@ -40,9 +40,9 @@ exports.user_index_get = (req,res) => {
 
 ////so this shows ejs
 
-exports.user_show_get = (req,res) => {
+exports.user_detail_get = (req,res) => {
     console.log(req.query.id);
-    user.findById(req.query.id).populate('user')
+    User.findById(req.query.id).populate('name')
     .then((user) => {
         console.log(user)
         res.render("user/detail", {user})
