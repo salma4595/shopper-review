@@ -27,4 +27,10 @@ router.post('/edit', shopController.shop_edit_post);
 
 // GET /delete
 router.get('/delete', shopController.shop_delete_get);
+
+
+
+
+
+//Export Routes
 module.exports = router;

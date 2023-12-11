@@ -3,7 +3,12 @@ const mongoose= require('mongoose')
 const mallSchema = mongoose.Schema({
     nameOfMall:String,
     aboutOfMall:String,
-    rating: Number,
+    rating: {
+        type: Number,
+        required: true,
+        min: 1,
+        max: 5
+    },
     location:String,
     openingHour:String,
     PhoneNumber: Number,

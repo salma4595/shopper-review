@@ -31,6 +31,11 @@ app.use("/", indexRouter);
 app.use('/mall', mallRouter);
 app.use('/user', userRouter)
 
+
+
+
+
+
 // Setup server
 const PORT = process.env.PORT;
 app.listen(PORT, () => {console.log(`Server running on port ${PORT}`)});
