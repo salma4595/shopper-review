@@ -2,6 +2,7 @@ const mongoose= require('mongoose')
 
 const mallSchema = mongoose.Schema({
     nameOfMall:String,
+    aboutOfMall:String,
     rating: Number,
     location:String,
     openingHour:String,

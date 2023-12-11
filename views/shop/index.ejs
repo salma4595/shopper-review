@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <title>Shop index</title>
 </head>
 <body>
@@ -22,5 +23,29 @@
             </tr>
             <%})%>
     </table>
+    <div class="row">
+        <% shops.forEach(function(shop) {%>
+            <div class="col-sm-4">
+                <div class="card mx-auto mt-3">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=shop.name%></h5>
+                        <p class="card-text"><%=shop.description%></p>
+                        <a href="/shop/detail?id=<%=shop._id%>" class="btn btn-primary">View Shop</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><%=shop.rating%> stars</small>
+                        <% for(let i = 1; i <= 5; i++) {%>
+                            <% if(i <= shop.rating) { %>
+                                <i class="bi bi-star-fill"></i>
+                            <%} else{%>
+                                <i class="bi bi-star"></i>
+                            <%}%>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+        <%})%>
+    </div>
 </body>
 </html>

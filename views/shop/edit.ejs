@@ -7,16 +7,17 @@
         <input type="text" name="name" value="<%=shop.name %>" />
     </div>
     <div>
-        <label> rating </label>
-        <textarea type="number" name="rating"><%=shop.rating %></textarea>
+        <label> Description </label>
+        <textarea name="description"><%=shop.description %></textarea>
     </div>
-  
-   
+    <div>
+        <label> rating </label>
+        <input type="number" name="rating" value="<%=shop.rating %>">
+    </div>
     <div>
         <label> location </label>
         <input type="text" name="location" value="<%=shop.location %>" />
     </div>
-
     <div>
         <label> Working Hours </label>
         <input type="text" name="workingHours" value="<%=shop.workingHours %>" />
