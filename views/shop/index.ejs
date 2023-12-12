@@ -7,22 +7,6 @@
     <title>Shop index</title>
 </head>
 <body>
-    <!-- <table>
-        <tr>
-            <th>Shop Name</th>
-            <th>Category</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        <% shops.forEach(function(shop) {%>
-            <tr>
-                <td><a href="/shop/detail?id=<%=shop._id%>"><%=shop.name%></a></td>
-                <td><%=shop.category%></td>
-                <td><a href="/shop/edit?id=<%=shop._id%>">Edit</a></td>
-                <td><a href="/shop/delete?id=<%=shop._id%>">Delete</a></td>
-            </tr>
-            <%})%>
-    </table> -->
     <div class="row">
         <% shops.forEach(function(shop) {%>
             <div class="col-sm-4">
@@ -55,45 +39,46 @@
     </div>
 
     <br>
-<div class=" table-responsive-sm">
-    <table class="table table-bordered table-hover">
-        <caption>List of Shops (admin view Only)</caption>
-        <thead>
-        <tr class="table-dark">
-            <th scope="col text-center">#</th>
-            <th scope="col" class="text-center">Shop</th>
-            <th scope="col" class="text-center">Category</th>
-            <th scope="col" class="text-center">Rating</th>
-            <th scope="col" class="text-center">Created At</th>
-            <th scope="col"  class="text-center">Edit Shop</th>
-            <th scope="col" class="text-center">Delete Shop</th>
+    <%if(user && user.userType == 'admin') {%>
+        <div class=" table-responsive-sm">
+            <table class="table table-bordered table-hover">
+                <caption>List of Shops (admin view Only)</caption>
+                <thead>
+                <tr class="table-dark">
+                    <th scope="col text-center">#</th>
+                    <th scope="col" class="text-center">Shop</th>
+                    <th scope="col" class="text-center">Category</th>
+                    <th scope="col" class="text-center">Rating</th>
+                    <th scope="col" class="text-center">Created At</th>
+                    <th scope="col"  class="text-center">Edit Shop</th>
+                    <th scope="col" class="text-center">Delete Shop</th>
+                    
+                </tr> 
+            </thead>
             
-        </tr> 
-    </thead>
-    
-        <% shops.forEach(function (shop,index) { %> 
-        <tbody>
-        <tr>
-            <th scope="row"><%= index + 1 %></th>
-            <td class="text-center">
-               <a href="/shop/detail?id=<%= shop._id %>">
-                <%= shop.name %>
-            </td>
-           
-            
-            <td class="text-center"> <%= shop.category %> </td>
-            <td class="text-center"> <%= shop.rating%> </td>
-            <td class="text-center"> <%= shop.createdAt %> </td>
-        
-            
-            <td><a href="/shop/edit?id=<%= shop._id%>">Edit shop</a></td>
-            <td><a href="/shop/delete?id=<%= shop._id%>">Delete shop</a></td>
-        </tr>
-    </tbody>
-            <%});%>
-        <tbody></tbody>    
-    </table>
-    
-    </div>
+                <% shops.forEach(function (shop,index) { %> 
+                <tbody>
+                <tr>
+                    <th scope="row"><%= index + 1 %></th>
+                    <td class="text-center">
+                    <a href="/shop/detail?id=<%= shop._id %>">
+                        <%= shop.name %>
+                    </td>
+                
+                    
+                    <td class="text-center"> <%= shop.category %> </td>
+                    <td class="text-center"> <%= shop.rating%> </td>
+                    <td class="text-center"> <%= shop.createdAt %> </td>
+                
+                    
+                    <td><a href="/shop/edit?id=<%= shop._id%>">Edit shop</a></td>
+                    <td><a href="/shop/delete?id=<%= shop._id%>">Delete shop</a></td>
+                </tr>
+            </tbody>
+                    <%});%>
+                <tbody></tbody>    
+            </table>
+        </div>
+    <%}%>
 </body>
 </html>
