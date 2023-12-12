@@ -3,6 +3,8 @@ const Shop = require('../models/Shop');
 const {Mall} = require("../models/Mall");
 const Review = require("../models/Review");
 const User = require("../models/user");
+const upload = require('../config/upload');
+
 // CRUD operations
 //HTTP POST- Create - Post the data 
 // HTTP GET - Read - Retrives the data
@@ -31,19 +33,35 @@ exports.mall_create_get = (req, res) => {
   };
 
 
-exports.mall_create_post= (req, res) =>{
+exports.mall_create_post = async (req, res) => {
+    let result = '';
+    let resultMulti = [];
+    // populate images path into an array
+    let multiImages = [];
+    req.files.mallImages.forEach((image) => {
+        multiImages.push(image.path);
+    });
+    resultMulti = await upload.upload_multiple(multiImages);
+    try {
+        result = await upload.upload_single(req.files.thumbnail[0].path);
+        resultMulti = await upload.upload_multiple(multiImages);
+    }
+    catch (err) {
+        console.log(err);
+    }
     console.log(req.body)
-    let mall= new Mall(req.body); // depend on controllers
-//save author
-mall.save()  // depend on constant 
-.then(() => {
-    res.redirect("/mall/index");
-})
-.catch((err) => {
-    console.log(err);
-    res.send("Please try again later!!")
-})
-}
+    let mall= new Mall(req.body); 
+    mall.thumbnail = result.url;
+    mall.images = resultMulti;
+    mall.save()
+    .then(() => {
+        res.redirect("/mall/index");
+    })
+    .catch((err) => {
+        console.log(err);
+        res.send("Please try again later!!")
+    })
+    }
 
 
 exports.mall_delete_get= (req,res) =>{
@@ -86,6 +104,7 @@ exports.mall_edit_get= (req,res) =>{
 }
 
 exports.mall_update_post= (req,res) =>{
+
     console.log(req.body.id)
     Mall.findByIdAndUpdate(req.body.id, req.body)
     .then(() => {

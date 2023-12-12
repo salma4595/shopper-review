@@ -2,7 +2,6 @@ require('dotenv').config()
 const cloudinary = require('cloudinary');
 
 exports.upload_single = async (imagePath) => {
-    console.log(`uploading: ${imagePath}`);
     return result = await cloudinary.uploader.upload(imagePath);
 }
 
