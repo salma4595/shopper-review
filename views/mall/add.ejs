@@ -1,6 +1,6 @@
 <h1>Add Mall</h1>
 
-<form method="POST" action="/mall/add" >
+<form method="POST" action="/mall/add" enctype="multipart/form-data">
 
     <div class="mb-3">
         <label class="form-label"> Name of Mall </label>
@@ -34,8 +34,14 @@
         <input type="String" name="PhoneNumber" class="form-control"/>
     </div>
 
+    <div>
+        <label for="thumbnail" class="form-control">Thumbnal picture of the mall</label>
+        <input type="file" class="form-control" id="image" name="thumbnail" accept="image/png, image/jpeg"/>    
+        <label for="mallImages" class="form-control">Images of the mall</label>
+        <input type="file" class="form-control" id="images" name="mallImages" accept="image/png, image/jpeg" multiple/>
+    </div>
 
     <div>
-        <button type="submit">Create Mall</button>
+        <input class="btn btn-primary mt-2" type="submit" value="Add new mall"/>
     </div>
 </form>
