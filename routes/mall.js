@@ -14,9 +14,9 @@ router.get("/add",ensureLoggedIn, MallCntrl.mall_create_get);
 router.post("/add",ensureLoggedIn, upload.fields([{name: 'thumbnail'}, {name: 'mallImages'}]) ,MallCntrl.mall_create_post);
 router.get("/index", MallCntrl.mall_index_get);
 router.get("/detail", MallCntrl.mall_show_get);
-router.get("/delete", MallCntrl.mall_delete_get);
-router.get("/edit", MallCntrl.mall_edit_get);
-router.post("/update", MallCntrl.mall_update_post);
+router.get("/delete",ensureLoggedIn, MallCntrl.mall_delete_get);
+router.get("/edit",ensureLoggedIn, MallCntrl.mall_edit_get);
+router.post("/update",ensureLoggedIn, MallCntrl.mall_update_post);
 
 
 
