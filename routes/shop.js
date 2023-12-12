@@ -20,16 +20,17 @@ var storage = multer.diskStorage({
 // router.use(express.urlencoded({extended: true}));
 
 // All routes start with /shop
+// Require the auth middleware
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // GET /index
 router.get('/index', shopController.shop_index_get);
 
 // GET /add
-router.get('/add', shopController.shop_add_get);
+router.get('/add',ensureLoggedIn, shopController.shop_add_get);
 
 // POST /add
-// this cuased an error
-router.post('/add', upload.fields([{name: 'thumbnail'}, {name: 'shopImages'}]),shopController.shop_add_post);
+router.post('/add', ensureLoggedIn, upload.fields([{name: 'thumbnail'}, {name: 'shopImages'}]),shopController.shop_add_post);
 
 // GET /detail
 router.get('/detail', shopController.shop_detail_get);
