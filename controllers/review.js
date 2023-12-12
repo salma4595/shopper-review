@@ -10,9 +10,14 @@ const User = require("../models/user");
 //HTTP Delete/GET/POST - delete- delete the data
 
 exports.review_index_get= (req, res) =>{
+    console.log('inside review');
     Review.find().populate('shop')
     .populate('user') // populate the 'user' field
     .then((reviews) =>{
+        Shop.find()
+        .then((shops) => {
+
+        })
         res.render("review/index",{reviews});
     })
     .catch((err) => {
@@ -24,7 +29,7 @@ exports.review_index_get= (req, res) =>{
 exports.review_create_get= (req, res) =>{
     Shop.find()
     .then((shops) => {
-        console.log
+        console.log(shops);
         res.render('review/add', {shops});
     })
     .catch((err) => {
