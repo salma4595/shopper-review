@@ -1,17 +1,23 @@
 const mongoose= require('mongoose')
 
 const mallSchema = mongoose.Schema({
-    nameOfMall:String,
-    aboutOfMall:String,
-    rating: {
+    "nameOfMall":String,
+    "aboutOfMall":String,
+    "thumbnail": String,
+    "images": [
+        {
+            type: String
+        }
+    ],
+    "rating": {
         type: Number,
         min: 1,
         max: 5
     },
-    location:String,
-    openingHour:String,
-    PhoneNumber: Number,
-    shop: {
+    "location":String,
+    "openingHour":String,
+    "PhoneNumber": Number,
+    "shop": {
         type: mongoose.Schema.Types.ObjectId,
         ref:'Shop'
         },

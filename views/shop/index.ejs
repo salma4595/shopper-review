@@ -30,7 +30,13 @@
                     <img src="<%= shop.thumbnail%>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><%=shop.name%></h5>
-                        <p class="card-text"><%=shop.description%></p>
+                        <p class="card-text">
+                            <% if(shop.description.length > 300) {%>
+                                <%=shop.description.substring(0, 300)%> ...                            
+                                <%} else {%>
+                                    <%=shop.description%>
+                                    <%}%>
+                        </p>
                         <a href="/shop/detail?id=<%=shop._id%>" class="btn btn-primary">View Shop</a>
                     </div>
                     <div class="card-footer">
