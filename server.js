@@ -39,8 +39,7 @@ app.use(function (req, res, next) {
 app.set("view engine", "ejs");
 
 //Node.js to look for all the files (CSS,JS,AuDIO,Vedios, Images)
-app.use(express.static("public"));
-
+app.use(express.static('public'));
 //Nodejs to look into views folder for the file named layout.ejs
 app.use(expressLayouts)
 
