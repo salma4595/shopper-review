@@ -42,14 +42,14 @@ exports.review_create_get= (req, res) =>{
 exports.review_create_post= (req, res) =>{
     console.log(req.body)
     let review= new Review(req.body); // depend on controllers
-//save author
-review.save()  // depend on constant 
-.then(() => {
-    res.redirect("/review/index");
-})
-.catch((err) => {
-    console.log(err);
-    res.send("Please try again later!!")
+    
+    review.save()  // depend on constant 
+    .then(() => {
+        res.redirect("/review/index");
+    })
+    .catch((err) => {
+        console.log(err);
+        res.send("Please try again later!!")
 })
 }
 
