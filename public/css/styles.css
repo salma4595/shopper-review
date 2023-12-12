@@ -36,11 +36,11 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary{
 }
 
 .card {
-    height: 300px;
+    min-height: 300px;
 }
 
 .card-text {
-    height: 100px;
+    height: 150px;
 }
 
 .col-sm-10{
