@@ -1,6 +1,7 @@
 const Shop = require('../models/Shop');
 const {Mall} = require('../models/Mall');
 const Review = require("../models/Review");
+const upload = require('../config/upload');
 
 // get index page
 exports.shop_index_get = (req, res) => {
@@ -73,10 +74,18 @@ exports.shop_add_get = (req, res) => {
     })
 }
 
-exports.shop_add_post = (req, res) => {
-    console.log('inside shop_edit_post');
-    // console.log(`Adding new shop: \n ${req.body}`);
+exports.shop_add_post = async (req, res) => {
+    let result = '';
+    try {
+        result = await upload.upload_single(`public/${req.body.thumbnail}`);
+        console.log(result);
+    }
+    catch (err) {
+        console.log(err);
+    }
+    console.log(`uploaded img: ${result}`);
     let shop = new Shop(req.body);
+    shop.thumbnail = result.url;
     shop.save()
     .then(() => {
         console.log(shop);
@@ -85,9 +94,4 @@ exports.shop_add_post = (req, res) => {
     .catch((err) => {
         console.log(err);
     })
-}
-
-// upload image
-exports.shop_thumbnail_post = (req, res) => {
-    // add image thumbnail path to the database
 }
