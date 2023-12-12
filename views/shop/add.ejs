@@ -1,32 +1,38 @@
 <form action="/shop/add" method="POST" enctype="multipart/form-data">
-    <label for="name" class="form-control">Shop Name</label>
+    <label for="name" class="form-label">Shop Name</label>
     <input type="text" name="name" class="form-control">
     <div>
-        <label>Mall</label>
+        <label class="form-label">Mall</label>
         <select name="mall" class="form-control">
             <% malls.forEach(function (mall) { %>
                 <option value="<%= mall._id %>"><%= mall.nameOfMall %></option>
             <% }) %>
         </select>
     </div>
-    <label for="category" class="form-control">Category</label>
+    <label for="category" class="form-label">Category</label>
     <input type="text" name="category" class="form-control">
-    <label for="location" class="form-control">Location</label>
+
+    <label for="location" class="form-label">Location</label>
     <input type="text" name="location" class="form-control">
-    <label for="description" class="form-control">Description</label>
+
+    <label for="description" class="form-label">Description</label>
     <textarea type="text" name="description" class="form-control"></textarea>
-    <label for="workingHours" class="form-control">Working Hours</label>
+
+    <label for="workingHours" class="form-label">Working Hours</label>
     <input type="text" name="workingHours" class="form-control">
-    <label for="contactNumber" class="form-control">Contact Number</label>
+
+    <label for="contactNumber" class="form-label">Contact Number</label>
     <input type="text" name="contactNumber" class="form-control">
-    <label for="thumbnail" class="form-control">Thumbnal picture of the shop</label>
-    <input type="file" class="form-control" id="image" name="thumbnail" accept="image/png, image/jpeg"/>    
-    <label for="shopImages" class="form-control">Images of the shop</label>
+
+    <label for="thumbnail" class="form-label">Thumbnal picture of the shop</label>
+    <input type="file" class="form-control" id="image" name="thumbnail" accept="image/png, image/jpeg"/>   
+
+    <label for="shopImages" class="form-label">Images of the shop</label>
     <input type="file" class="form-control" id="images" name="shopImages" accept="image/png, image/jpeg" multiple/>    
     <br>
     <!-- THIS IS FOR TESTING ONLY SHOULD BE REMOVED FOR PRODUCTION -->
-    <label for="rating">Rating</label>
-    <input type="number" name="rating"/>
+    <label for="rating" class="form-label">Rating</label>
+    <input type="number" class="form-control" name="rating"/>
     <br>
     <input class="btn btn-primary mt-2" type="submit" value="Add new shop"/>
 </form>
