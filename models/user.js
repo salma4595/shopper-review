@@ -7,6 +7,10 @@ const Schema = mongoose.Schema
       type:String,
       required: true
   },
+  avatar: {
+    type: String,
+    default: "/images/blank-profile.png"
+  },
   email: String,
   userType: {
       type: String,

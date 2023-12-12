@@ -1,6 +1,7 @@
 ///require model
 const User = require('../models/user')
 const Review = require("../models/Review");
+const upload = require('../config/upload');
 
 ////start of crud ... this is create get
 exports.user_create_get = (req,res) => {
@@ -22,11 +23,7 @@ exports.user_create_post = (req, res) => {
     res.send('no , again')
 })}
 
-
-
-
-
-///to find user
+// find user
 exports.user_index_get = (req,res) => {
     User.find()
     
@@ -39,8 +36,7 @@ exports.user_index_get = (req,res) => {
     })
 }
 
-////so this shows ejs
-
+// show the details view
 exports.user_detail_get = (req,res) => {
     console.log(req.query.id);
     User.findById(req.query.id).populate('name')
@@ -54,7 +50,7 @@ exports.user_detail_get = (req,res) => {
 }
 
 
-///delete user
+// delete user
 exports.user_delete_get = (req,res) => {
     console.log(req.query.id);
     //find doc and delete
@@ -68,7 +64,7 @@ exports.user_delete_get = (req,res) => {
     })
 }
 
-///editing 
+// edit user
 exports.user_edit_get = (req, res) => {
     User.findById(req.query.id)
     .then((user) => {
@@ -91,4 +87,18 @@ exports.user_edit_post = (req,res) => {
     .catch(err => {
         console.log(err)
     })
+}
+
+// show profile for logged in user
+exports.user_profile_get = (req, res) => {
+    res.render("user/profile");
+}
+
+exports.user_profile_update_post = async (req, res) => {
+    console.log(req.file.avatar);
+    let result = await upload.upload_single(req.file.avatar.path);
+    console.log('after result')
+    console.log(user_id);
+    console.log(result.url);
+    // User.findById(user_id);
 }
