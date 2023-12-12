@@ -125,3 +125,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary{
 .rating input[type="radio"]:checked ~ label {
   color: #FFD700;
 }
+
+.userAvatar {
+  max-height: 100px;
+}
