@@ -8,7 +8,11 @@ googleId:{
     required: true
 },
 email: String,
-userType: String,
+userType: {
+    type: String,
+    enum: ["admin", "user"],
+    default: "user"
+  },
 },{timestamps: true})
 
 const User = mongoose.model('user', userSchema)

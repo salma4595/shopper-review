@@ -2,6 +2,7 @@
 const Shop = require('../models/Shop');
 const {Mall} = require("../models/Mall");
 const Review = require("../models/Review");
+const User = require("../models/user");
 // CRUD operations
 //HTTP POST- Create - Post the data 
 // HTTP GET - Read - Retrives the data
@@ -10,6 +11,7 @@ const Review = require("../models/Review");
 
 exports.review_index_get= (req, res) =>{
     Review.find().populate('shop')
+    .populate('user') // populate the 'user' field
     .then((reviews) =>{
         res.render("review/index",{reviews});
     })
@@ -65,6 +67,7 @@ exports.review_show_get= (req,res) =>{
     let shops = '';
     // get the shops where are located inside the review
     Review.findById(req.query.id).populate('shop')
+    .populate('user') // populate the 'user' field
     .then((review) => {
         Shop.find({review: req.query.id})
         .then((shops) => {
@@ -77,7 +80,8 @@ exports.review_show_get= (req,res) =>{
 }
 
 exports.review_edit_get= (req,res) =>{
-    Review.findById(req.query.id)
+    Review.findById(req.query.id).populate('shop')
+    .populate('user')
     .then((review) => {
         res.render("review/edit", {review});
     })

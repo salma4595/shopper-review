@@ -5,15 +5,21 @@ const express = require('express')
 const userCtrl = require("../controllers/user")
 const router = express.Router()
 
+// Require the auth middleware
+const ensureLoggedIn = require('../config/ensureLoggedIn');
+
+
 
 ///adding middleware
 router.use(express.urlencoded({extended: true}));
 
 ///routes
 
-///add (getting data and sending user back)
-router.get('/add',userCtrl.user_create_get )
-router.post('/add', userCtrl.user_create_post)
+router.get("/add", ensureLoggedIn, userCtrl.user_create_get);
+router.post("/add", ensureLoggedIn, userCtrl.user_create_post);
+// ///add (getting data and sending user back)
+// router.get('/add',userCtrl.user_create_get )
+// router.post('/add', userCtrl.user_create_post)
 ///retreiving user
 router.get('/index', userCtrl.user_index_get)
 ////

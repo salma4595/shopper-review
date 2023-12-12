@@ -5,6 +5,7 @@
     <tr>
        
         <th>Shop</th>
+        <th>User name</th>
         <th>Rating</th>
         <th>Comment</th>
         <th>Created At</th>
@@ -19,7 +20,7 @@
            <%= review.shop.name %>
          </a>
         </td>
-       
+        <td> <%= review.user %> </td>
         <td> <%= review.rating %> </td>
         <td> <%= review.comment%> </td>
         <td> <%= review.createdAt %> </td>
@@ -35,7 +36,7 @@
     <% reviews.forEach(function(review) {%>
         <div class="col-sm-4">
             <div class="card mx-auto mt-3">
-                <img src="#" class="card-img-top" alt="#">
+
                 <div class="card-body">
                     <h5 class="card-title"><%=review.shop.name%></h5>
                     <p class="card-text"><%=review.comment%></p>
