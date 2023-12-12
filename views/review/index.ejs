@@ -17,10 +17,10 @@
        <tr>
         <td>
            <a href="/review/detail?id=<%= review._id %>">
-           <%= review.shop %>
+           <%= review.shop.name %>
          </a>
         </td>
-        <td> <%= review.user %> </td>
+        <td> <%= review.user.name %> </td>
         <td> <%= review.rating %> </td>
         <td> <%= review.comment%> </td>
         <td> <%= review.createdAt %> </td>
@@ -61,6 +61,7 @@
 </div>
 
 <br>
+<!-- Add here condition for admin only -->
 <div class=" table-responsive-sm">
     <table class="table table-bordered table-hover">
         <caption>List of Reviews (admin view Only)</caption>
@@ -89,7 +90,7 @@
            
             
            
-            <td class="text-center"> <%= review.user %> </td>
+            <td class="text-center"> <%= review.user.name %> </td>
             <td class="text-center"> <%= review.rating %> </td>
             <td class="text-center"> <%= review.comment%> </td>
             <td class="text-center"> <%= review.createdAt %> </td>
