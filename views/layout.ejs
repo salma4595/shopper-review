@@ -24,41 +24,51 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               
+
               <% if(user) { %>
 
               <li class="nav-item">
                 <a class="nav-link" href="/mall/index">Mall Directory</a>
               </li>
-            
-              <li class="nav-item">
+            <% if (user.userType === 'admin' ){ %>
+                <li class="nav-item">
                 <a class="nav-link" href="/mall/add">Add Mall</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/shop/add">Add Shop</a>
+              </li>
+              <li class="nav-item">
+                <a href="/user/index" class="nav-link">Users</a>
+              </li>
+             <% } %>
+              
 
               <li class="nav-item">
                 <a class="nav-link" href="/shop/index"> Shop Directory</a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="/shop/add">Add Shop</a>
-              </li>
               
-              <li class="nav-item">
-                <a href="/user/index" class="nav-link">Users</a>
-              </li>
+              
 
               <!-- <li class="nav-item">
                 <a href="/user/add" class="nav-link">Add User</a>
               </li> -->
 
-              <li class="nav-item">
-                <a href="/logout" class="nav-link">Logout</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">Hi <%= user.name %></a>
-              </li>
               
-          
-         
+              
+              <li class="nav-item">
+                <a href="/review/index" class="nav-link">Reviews</a></li>
+                <li class="nav-item">
+                <a href="/review/add" class="nav-link">Add Reviews</a></li>
+                
+              
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Hi <%= user.name %></a>
+                </li>
+                <li class="nav-item">
+                  <a href="/logout" class="nav-link">Logout</a>
+                </li>
+
               <% } else { %>
 
               <li class="nav-item">
@@ -72,6 +82,7 @@
               <li class="nav-item">
                 <a href="/aot/google" class="nav-link">Login</a>
               </li>
+             
               <% } %>
 
             
@@ -108,10 +119,9 @@
 
 
  <nav>
-  <a href="/user/add" class="btn btn-outline-primary">Add User</a>
-  <a href="/user/index" class="btn btn-outline-primary">Users</a>
-  <a href="/review/index" class="btn btn-outline-primary">Reviews</a>
-  <a href="/review/add" class="btn btn-outline-primary">Add Reviews</a>
+  <!-- <a href="/user/add" class="btn btn-outline-primary">Add User</a>
+  <a href="/user/index" class="btn btn-outline-primary">Users</a> -->
+ 
  </nav>
 
   

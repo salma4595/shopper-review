@@ -2,7 +2,7 @@
 const Shop = require('../models/Shop');
 const {Mall} = require("../models/Mall");
 const Review = require("../models/Review");
-
+const User = require("../models/user");
 // CRUD operations
 //HTTP POST- Create - Post the data 
 // HTTP GET - Read - Retrives the data
@@ -20,9 +20,15 @@ exports.mall_index_get= (req, res) =>{
 }
 
 
-exports.mall_create_get= (req, res) =>{
-    res.render("mall/add");
-}
+exports.mall_create_get = (req, res) => {
+    // ensureLoggedIn(req, res, () => {
+    //   if (req.user === 'admin') {
+        res.render("mall/add");
+    //   } else {
+    //     //res.redirect("/mall/index");
+    //   }
+    // });
+  };
 
 
 exports.mall_create_post= (req, res) =>{
