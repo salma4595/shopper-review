@@ -1,14 +1,17 @@
 :root{
     --default:#121213;
+    --light:#f8f9fa;
     --wrong:#C8B8DB;
     --right:#3E6990;
 }
 
 body{
-    padding: 20px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+font-family: 'Titillium Web', sans-serif;
 }
 
-footer.navbar.fixed-bottom.bg-body-tertiary{
+/* footer.navbar.fixed-bottom.bg-body-tertiary{
     color: var(--default);
     padding: 20px ;
     padding-bottom: 3px ;
@@ -20,7 +23,7 @@ footer.navbar.fixed-bottom.bg-body-tertiary{
 .footer{
 margin: 10px;
 font-size: 15px;
-}
+} */
 
 nav.navbar.navbar-expand-lg.bg-body-tertiary{
     background-color: var(--wrong);
@@ -29,6 +32,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary{
 
 .navbar-brand{
     color: var(--default);
+    
 }
 
 .nav-link{
@@ -36,13 +40,51 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary{
 }
 
 .card {
-    min-height: 300px;
+    height: 95%;
+    width: 100%;
+  
 }
 
 .card-text {
-    height: 150px;
+    /* height: 10px; */
 }
 
-.col-sm-10{
-    display:flex;
+.custom-card {
+  margin-bottom: 20px;
 }
+
+/* .col-sm-10{
+    display:flex;
+} */
+
+  .rating {
+    display: flex;
+  }
+  
+  .rating input[type="radio"] {
+    display: none;
+  }
+  
+  .rating label {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 24px;
+    color: #FFD700;
+    cursor: pointer;
+  }
+  
+  .rating label:before {
+    content: "\f005";
+  }
+  
+  .rating input[type="radio"]:checked ~ label:before {
+    color: #FFD700;
+  }
+  
+  .rating input[type="radio"]:hover ~ label:before {
+    color: rgb(124, 115, 115);
+  }
+  .rating input[type="radio"]:checked ~ label {
+    color: #FFD700;
+  }
+  
