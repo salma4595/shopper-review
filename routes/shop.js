@@ -23,13 +23,13 @@ router.post('/add', ensureLoggedIn, upload.fields([{name: 'thumbnail'}, {name: '
 router.get('/detail', shopController.shop_detail_get);
 
 // GET /edit
-router.get('/edit', shopController.shop_edit_get);
+router.get('/edit',ensureLoggedIn, shopController.shop_edit_get);
 
 // POST /edit
-router.post('/edit', shopController.shop_edit_post);
+router.post('/edit',ensureLoggedIn, shopController.shop_edit_post);
 
 // GET /delete
-router.get('/delete', shopController.shop_delete_get);
+router.get('/delete',ensureLoggedIn, shopController.shop_delete_get);
 
 // POST /upload
 // router.post('/upload', upload.single('image'), shopController.shop_thumbnail_post);
