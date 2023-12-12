@@ -5,10 +5,12 @@ router.use(express.urlencoded({extended: true}));
 const MallCntrl= require("../controllers/mall")
 
 // router.use(methodOverride('_method'));
+// Require the auth middleware
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 //Routes
-router.get("/add", MallCntrl.mall_create_get);
-router.post("/add", MallCntrl.mall_create_post);
+router.get("/add",ensureLoggedIn, MallCntrl.mall_create_get);
+router.post("/add",ensureLoggedIn, MallCntrl.mall_create_post);
 router.get("/index", MallCntrl.mall_index_get);
 router.get("/detail", MallCntrl.mall_show_get);
 router.get("/delete", MallCntrl.mall_delete_get);
