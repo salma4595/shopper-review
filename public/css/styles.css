@@ -46,3 +46,48 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary{
 .col-sm-10{
     display:flex;
 }
+/* 
+.rating-stars {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .full-star {
+    color: gold;
+    font-size: 30px;
+    margin-right: 5px;
+    cursor: pointer;
+  } */
+  .rating {
+    display: flex;
+  }
+  
+  .rating input[type="radio"] {
+    display: none;
+  }
+  
+  .rating label {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 24px;
+    color: #FFD700;
+    cursor: pointer;
+  }
+  
+  .rating label:before {
+    content: "\f005";
+  }
+  
+  .rating input[type="radio"]:checked ~ label:before {
+    color: #FFD700;
+  }
+  
+  .rating input[type="radio"]:hover ~ label:before {
+    color: rgb(124, 115, 115);
+  }
+  .rating input[type="radio"]:checked ~ label {
+    color: #FFD700;
+  }
+  /* .rating label:hover:before {
+    color: rgb(124, 115, 115);
+  } */
