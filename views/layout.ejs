@@ -14,7 +14,7 @@
     
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">ShopperApp</a>
+          <a class="navbar-brand" href="/">ShopperApp</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -30,17 +30,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="/mall/index">Mall Directory</a>
               </li>
-            <% if (user.userType === 'admin' ){ %>
-                <li class="nav-item">
-                <a class="nav-link" href="/mall/add">Add Mall</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/shop/add">Add Shop</a>
-              </li>
-              <li class="nav-item">
-                <a href="/user/index" class="nav-link">Users</a>
-              </li>
-             <% } %>
+            
               
 
               <li class="nav-item">
@@ -61,6 +51,19 @@
                 <li class="nav-item">
                 <a href="/review/add" class="nav-link">Add Reviews</a></li>
                 
+                <% if (user.userType === 'admin' ){ %>
+              
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="/mall/add">Add Mall</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/shop/add">Add Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/user/index" class="nav-link">Users</a>
+                  </li>
+                 <% } %>
               
                 <li class="nav-item">
                   <a href="#" class="nav-link">Hi <%= user.name %></a>
