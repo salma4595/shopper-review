@@ -1,14 +1,16 @@
 :root{
     --default:#121213;
+    --light:#f8f9fa;
     --wrong:#C8B8DB;
     --right:#3E6990;
 }
 
 body{
     padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-footer.navbar.fixed-bottom.bg-body-tertiary{
+/* footer.navbar.fixed-bottom.bg-body-tertiary{
     color: var(--default);
     padding: 20px ;
     padding-bottom: 3px ;
@@ -20,7 +22,7 @@ footer.navbar.fixed-bottom.bg-body-tertiary{
 .footer{
 margin: 10px;
 font-size: 15px;
-}
+} */
 
 nav.navbar.navbar-expand-lg.bg-body-tertiary{
     background-color: var(--wrong);
@@ -29,6 +31,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary{
 
 .navbar-brand{
     color: var(--default);
+    
 }
 
 .nav-link{
@@ -36,16 +39,22 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary{
 }
 
 .card {
-    height: 300px;
+    height: 95%;
+    width: 100%;
+  
 }
 
 .card-text {
-    height: 100px;
+    /* height: 10px; */
 }
 
-.col-sm-10{
-    display:flex;
+.custom-card {
+  margin-bottom: 20px;
 }
+
+/* .col-sm-10{
+    display:flex;
+} */
 /* 
 .rating-stars {
     display: flex;

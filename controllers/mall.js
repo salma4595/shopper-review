@@ -10,9 +10,9 @@ const User = require("../models/user");
 //HTTP Delete/GET/POST - delete- delete the data
 
 exports.mall_index_get= (req, res) =>{
-    Mall.find() 
+    Mall.find()
     .then((malls) =>{
-        res.render("mall/index",{malls});
+        res.render("mall/index",{malls, user: req.user });
     })
     .catch((err) => {
         console.log(err);
