@@ -76,16 +76,23 @@ exports.shop_add_get = (req, res) => {
 
 exports.shop_add_post = async (req, res) => {
     let result = '';
+    let resultMulti = [];
+    // populate images path into an array
+    let multiImages = [];
+    req.files.shopImages.forEach((image) => {
+        multiImages.push(image.path);
+    });
+    resultMulti = await upload.upload_multiple(multiImages);
     try {
-        result = await upload.upload_single(`public/${req.body.thumbnail}`);
-        console.log(result);
+        result = await upload.upload_single(req.files.thumbnail[0].path);
+        resultMulti = await upload.upload_multiple(multiImages);
     }
     catch (err) {
         console.log(err);
     }
-    console.log(`uploaded img: ${result}`);
     let shop = new Shop(req.body);
     shop.thumbnail = result.url;
+    shop.images = resultMulti;
     shop.save()
     .then(() => {
         console.log(shop);

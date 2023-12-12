@@ -10,7 +10,7 @@ var storage = multer.diskStorage({
     filename: function (req, file, cb) {
         let filename = file.fieldname + '-' + Date.now() + '-' + file.originalname;
         // var name for img
-        req.body.thumbnail = `/uploads/${filename}`;
+        //req.body.thumbnail = `/uploads/${filename}`;
       cb(null, filename)
     }
   })
@@ -30,8 +30,7 @@ router.get('/index', shopController.shop_index_get);
 router.get('/add',ensureLoggedIn, shopController.shop_add_get);
 
 // POST /add
-// this cuased an error
-router.post('/add',ensureLoggedIn, upload.single('file_image'), shopController.shop_add_post);
+router.post('/add', ensureLoggedIn, upload.fields([{name: 'thumbnail'}, {name: 'shopImages'}]),shopController.shop_add_post);
 
 // GET /detail
 router.get('/detail', shopController.shop_detail_get);
