@@ -45,7 +45,7 @@ exports.review_create_post= (req, res) =>{
     
     review.save()  // depend on constant 
     .then(() => {
-        res.redirect("/review/index");
+        res.redirect("/shop/index");
     })
     .catch((err) => {
         console.log(err);
