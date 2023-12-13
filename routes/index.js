@@ -1,11 +1,11 @@
 ///things we require
-const express = require('express')
+const express = require('express');
 ///require passport
 const router = express.Router()
-const passport = require('passport')
+const passport = require('passport');
 
 ///require the controller
-const indexCtrl = require('../controllers/index')
+const indexCtrl = require('../controllers/index');
 
 
 ///routes
@@ -34,7 +34,5 @@ router.get('/logout', function(req,res){
         res.redirect('/')
     })
 })
-
-
 
 module.exports = router;
