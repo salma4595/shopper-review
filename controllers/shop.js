@@ -26,8 +26,14 @@ exports.shop_edit_get = (req, res) => {
 }
 
 // edit shop
-exports.shop_edit_post = (req, res) => {
-    console.log(req.body.id)
+exports.shop_edit_post = async (req, res) => {
+    let newThumbnail = await Shop.findById(req.body.id).thumbnail;
+    if(req.files.thumbnail) {
+        result = await upload.upload_single(req.files.thumbnail[0].path);
+        newThumbnail = result.url;
+        console.log(`new thumbnail: ${newThumbnail}`);
+    }
+    req.body.thumbnail = newThumbnail
     Shop.findByIdAndUpdate(req.body.id, req.body)
     .then(() => {
         res.redirect("/shop/index");

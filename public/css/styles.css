@@ -216,4 +216,14 @@ margin-bottom: 5%;
 
 .bi-star-fill::before {
  color: #FFD700;
+  object-fit: contain;
+}
+
+.imageSmall {
+  max-height: 150px;
+  object-fit: contain;
+}
+
+#selectThumbnailShop {
+  margin-top: 10px;
 }

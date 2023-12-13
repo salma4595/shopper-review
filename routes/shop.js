@@ -27,7 +27,7 @@ router.get('/detail', shopController.shop_detail_get);
 router.get('/edit', ensureLoggedInAdmin, shopController.shop_edit_get);
 
 // POST /edit
-router.post('/edit', ensureLoggedInAdmin, shopController.shop_edit_post);
+router.post('/edit', ensureLoggedInAdmin, upload.fields([{name: 'thumbnail'}, {name: 'shopImages'}]), shopController.shop_edit_post);
 
 // GET /delete
 router.get('/delete', ensureLoggedInAdmin, shopController.shop_delete_get);
