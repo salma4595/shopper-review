@@ -18,6 +18,12 @@
                     </div>
                 </div>
                 <p class="lead"><%=shop.description%></p>
+                <span>Location</span><p class="lead"><%=shop.location%></p>
+                <span>Opening Hours</span>
+                <p class="lead">
+                  <%= shop.workingHours.split('  ').join('<br>') %>
+                </p>
+                <span>Contact Us</span><p class="lead"><%=shop.contactNumber%></p>
             </div>
         </div>
     </div>
