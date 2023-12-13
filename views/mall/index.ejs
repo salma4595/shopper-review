@@ -9,12 +9,18 @@
     
 <div class="row">
     <% malls.forEach(function(mall) {%>
-        <div class="col-sm-4">
+        <div class="col-lg-4">
             <div class="card mx-auto mt-3">
                 <img src="<%=mall.thumbnail%>" class="card-img-top" alt="#">
                 <div class="card-body">
                     <h5 class="card-title"><%=mall.nameOfMall%></h5>
-                    <p class="card-text"><%=mall.aboutOfMall%></p>
+                    <p class="card-text">
+                        <% if(mall.aboutOfMall.length > 300) {%>
+                            <%=mall.aboutOfMall.substring(0, 300)%> ...                            
+                            <%} else {%>
+                                <%=mall.aboutOfMall%>
+                                <%}%>
+                            </p>
                     
                     <br>
                     
