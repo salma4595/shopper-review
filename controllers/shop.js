@@ -5,7 +5,7 @@ const upload = require('../config/upload');
 
 // get index page
 exports.shop_index_get = (req, res) => {
-    Shop.find()
+    Shop.find().populate('mall')
     .then((shops) => {
         res.render('shop/index', {shops});
     })
