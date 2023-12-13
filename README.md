@@ -6,6 +6,8 @@ A Web App for the users experience for the shopping Malls in Bahrain
 * create / edit / update new `malls` and `shops`.
 * view all reviews posted by the users.
 * delete review of shops.
+* upload a single thumbnail image and multiple images of malls and shops.
+* update and delete multiple images of malls and shops.
 
 ### As a user you are able to:
 * login using your google account for now.
