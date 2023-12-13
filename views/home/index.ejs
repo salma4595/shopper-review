@@ -6,6 +6,9 @@
     <title>Document</title>
   </head>
   <body>
+    
+    <!-- ////carousel from bootstrap for photos -->
+
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="10000">
@@ -21,17 +24,9 @@
           <div class="carousel-item">
             <img src="/images/City_Centre_Bahrain_Interior.jpg" class="imageCara" alt="bahrain-city-centre-interior">
           </div>
-       
-          <div class="carousel-item">
-            <img src="/public/images/outside-moda-mall.jpg" class="imageCara" alt="Moda-Mall-Exterior">
-          </div>
 
           <div class="carousel-item">
             <img src="/images/inside-moda-mall.jpg" class="imageCara" alt="Moda-Mall-Interior">
-          </div>
-
-          <div class="carousel-item">
-            <img src="/images/seef-manama-outside.jpg" class="imageCara" alt="Seef-Mall-Exterior">
           </div>
 
           <div class="carousel-item">
@@ -51,12 +46,17 @@
           </div>
 
 
-        <div class="thisIsTextOverImage">
-            <h4>Trying to find out where to shop? 
-                you've come to the right place
-            Welcome to Shopper Review App </h4>
+          <!-- //// text and buttons to direct user to shop and mall directory -->
 
-            <!-- <button>Explore</button> -->
+        <div class="thisIsTextOverImage" id="fs-2">
+            <div>
+            <h4 class="justText">Welcome to Shopper Review App !! </h4>
+            </div>
+
+            <div>
+            <a href="http://localhost:3000/mall/index" rel="mallDirectory" class="buttonz">Mall Directory</a>
+            <a href="http://localhost:3000/shop/index" rel="shopDirectory" class="buttonz">Shop Directory</a>
+       </div>
         </div>
 
         </div>
