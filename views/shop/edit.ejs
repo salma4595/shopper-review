@@ -57,7 +57,7 @@
             <% shop.images.forEach(function(image, i) {%>
                 <div class="card">
                     <img class="imageSmall mx-1 card-img-top" src="<%=image%>" alt="">
-                    <a id="<%=i%>" class="card-title">delete</a>
+                    <a href="/shop/image/delete?index=<%=i%>&shop=<%=shop._id%>" class="card-title">delete</a>
                 </div>
                 <%})%>
             </div>
