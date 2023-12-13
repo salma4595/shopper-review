@@ -1,37 +1,7 @@
 
 <h1>Reviews Details </h1>
 
-<!-- <table>
-    <tr>
-       
-        <th>Shop</th>
-        <th>User name</th>
-        <th>Rating</th>
-        <th>Comment</th>
-        <th>Created At</th>
-        <th>Edit Review</th>
-        <th>Delete Review</th>
-        
-    </tr> 
-    <% reviews.forEach(function (review) { %> 
-       <tr>
-        <td>
-           <a href="/review/detail?id=<%= review._id %>">
-           <%= review.shop.name %>
-         </a>
-        </td>
-        <td> <%= review.user.name %> </td>
-        <td> <%= review.rating %> </td>
-        <td> <%= review.comment%> </td>
-        <td> <%= review.createdAt %> </td>
-    
-        
-        <td><a href="/review/edit?id=<%= review._id%>">Edit review</a></td>
-        <td><a href="/review/delete?id=<%= review._id%>">Delete review</a></td>
-    </tr>
-        
-        <%});%>
-</table> -->
+
 <div class="row">
     <% reviews.forEach(function(review) {%>
        

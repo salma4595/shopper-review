@@ -48,18 +48,14 @@
               
               
 
-              <!-- <li class="nav-item">
-                <a href="/user/add" class="nav-link">Add User</a>
-              </li> -->
-
+             
               
               
-              <li class="nav-item">
-                <a href="/review/index" class="nav-link">Reviews</a></li>
+             
                 <li class="nav-item">
                 <a href="/review/add" class="nav-link">Add Reviews</a></li>
                 
-                <% if (user.userType === 'admin' ){ %>
+                <% if (user.isAdmin === true ){ %>
               
                   
                   <li class="nav-item">
@@ -69,15 +65,18 @@
                     <a class="nav-link" href="/shop/add">Add Shop</a>
                   </li>
                   <li class="nav-item">
+                    <a href="/review/index" class="nav-link">Reviews</a></li>
+                  <li class="nav-item">
                     <a href="/user/index" class="nav-link">Users</a>
                   </li>
                  <% } %>
               
+               
                 <li class="nav-item">
                   <a href="/user/dashboard" class="nav-link">Hi <%= user.name %></a>
                 </li>
                 <li class="nav-item">
-                  <a href="/logout" class="nav-link">Logout</a>
+                  <a href="#" class="nav-link">Hi <%= user.name %></a>
                 </li>
 
               <% } else { %>

@@ -12,6 +12,10 @@ const Schema = mongoose.Schema
     default: "/images/blank-profile.png"
   },
   email: String,
+  isAdmin:{
+    type:Boolean,
+    default: false,
+  },
   userType: {
       type: String,
       enum: ["admin", "user"],

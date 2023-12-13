@@ -39,7 +39,7 @@
     </div>
 
     <br>
-    <%if(user && user.userType == 'admin') {%>
+    <%if(user &&user.isAdmin === true) {%>
         <div class=" table-responsive-sm">
             <table class="table table-bordered table-hover">
                 <caption>List of Shops (admin view Only)</caption>
@@ -47,6 +47,7 @@
                 <tr class="table-dark">
                     <th scope="col text-center">#</th>
                     <th scope="col" class="text-center">Shop</th>
+                    <th scope="col" class="text-center">Mall</th>
                     <th scope="col" class="text-center">Category</th>
                     <th scope="col" class="text-center">Rating</th>
                     <th scope="col" class="text-center">Created At</th>
@@ -65,8 +66,9 @@
                         <%= shop.name %>
                     </td>
                 
-                    
+                    <td class="text-center"> <%= shop.mall.nameOfMall %> </td>
                     <td class="text-center"> <%= shop.category %> </td>
+                    
                     <td class="text-center"> <%= shop.rating%> </td>
                     <td class="text-center"> <%= shop.createdAt %> </td>
                 
