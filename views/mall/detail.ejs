@@ -20,7 +20,11 @@
                 </div>
                 <p class="lead"><%=mall.aboutOfMall%></p>
                 <span>Location</span><p class="lead"><%=mall.location%></p>
-               <span>Opening Hours</span><p class="lead"><%=mall.openingHour%></p>
+                <span>Opening Hours</span>
+                <p class="lead">
+                  <%= mall.openingHour.split('  ').join('<br>') %>
+                </p>
+                <span>Contact Us</span><p class="lead"><%=mall.PhoneNumber%></p>
             </div>
         </div>
     </div>

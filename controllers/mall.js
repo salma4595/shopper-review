@@ -93,15 +93,20 @@ exports.mall_show_get= (req,res) =>{
     })
 }
 
-exports.mall_edit_get= (req,res) =>{
-    Mall.findById(req.query.id)
-    .then((mall) => {
-        res.render("mall/edit", {mall});
-    })
-    .catch((err) => {
+exports.mall_edit_get = (req, res) => {
+    const mallId = req.query.id;
+  
+    Mall.findById(mallId)
+      .then((mall) => {
+        // Assuming the mall object has a "rating" property
+        const previousRating = mall.rating;
+  
+        res.render("mall/edit", { mall, previousRating });
+      })
+      .catch((err) => {
         console.log(err);
-    })
-}
+      });
+  };
 
 exports.mall_update_post= (req,res) =>{
 
