@@ -108,7 +108,32 @@ exports.mall_edit_get = (req, res) => {
       });
   };
 
-exports.mall_update_post= (req,res) =>{
+exports.mall_update_post= async (req,res) =>{
+    let newThumbnail = await Mall.findById(req.body.id).thumbnail;
+    console.log(req.files);
+    if(req.files.thumbnail) {
+        result = await upload.upload_single(req.files.thumbnail[0].path);
+        newThumbnail = result.url;
+        console.log(`new thumbnail: ${newThumbnail}`);
+    }
+    if(req.files.shopImages) {
+        let mall = await Mall.findById(req.body.id)
+        // get the url of the req files only
+        let newImages = [];
+        req.files.mallImages.forEach((image) => {
+            newImages.push(image.path);
+        });
+
+        // upload images to the cloud
+        let result = await upload.upload_multiple(newImages);
+
+        // add the result to current array
+        shop.images = shop.images.concat(result);
+        req.body.images = shop.images;
+        console.log(shop.images);
+    }
+    req.body.thumbnail = newThumbnail
+
 
     console.log(req.body.id)
     Mall.findByIdAndUpdate(req.body.id, req.body)
