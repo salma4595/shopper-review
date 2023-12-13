@@ -103,15 +103,13 @@ exports.mall_edit_get= (req,res) =>{
     })
 }
 
-exports.mall_update_post= async (req,res) =>{
+exports.mall_update_post = async (req,res) =>{
     let newThumbnail = await Mall.findById(req.body.id).thumbnail;
-    console.log(req.files);
     if(req.files.thumbnail) {
         result = await upload.upload_single(req.files.thumbnail[0].path);
         newThumbnail = result.url;
-        console.log(`new thumbnail: ${newThumbnail}`);
     }
-    if(req.files.shopImages) {
+    if(req.files.mallImages) {
         let mall = await Mall.findById(req.body.id)
         // get the url of the req files only
         let newImages = [];
@@ -123,17 +121,29 @@ exports.mall_update_post= async (req,res) =>{
         let result = await upload.upload_multiple(newImages);
 
         // add the result to current array
-        shop.images = shop.images.concat(result);
-        req.body.images = shop.images;
-        console.log(shop.images);
+        mall.images = mall.images.concat(result);
+        req.body.images = mall.images;
     }
     req.body.thumbnail = newThumbnail
 
-
-    console.log(req.body.id)
     Mall.findByIdAndUpdate(req.body.id, req.body)
     .then(() => {
         res.redirect("/mall/index");
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+}
+
+exports.mall_image_delete_get = (req, res) => {
+    // /mall/image/delete?index=xxx&shop=xxxx
+    Mall.findById(req.query.mall)
+    .then((mall) => {
+        mall.images.splice(req.query.index, 1);
+        mall.save()
+        .then(() => {
+            res.redirect(`/mall/edit?id=${req.query.mall}`);
+        })
     })
     .catch((err) => {
         console.log(err);
