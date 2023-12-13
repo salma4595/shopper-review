@@ -5,7 +5,9 @@
     <label class="form-label">Shop</label>
     <select name="shop" class="form-control">
         <% shops.forEach(function (shop) { %>
-            <option value="<%= shop._id %>"><%= shop.name %></option>
+          <option value="<%= shop._id %>" <% if (shop._id.toString() === shopId.toString()) { %>selected<% } %>>
+            <%= shop.name %>
+        </option>
         <% }) %>
     </select>
   </div>    
@@ -38,6 +40,7 @@
       <input type="hidden" name="user" value="<%=user._id%>">
     </div>
 
+    <input type="hidden" name="shopId" value="<%= shopId %>">
     
     <div class="mb-3">
       <input class="btn btn-primary mt-2" type="submit" value="Create Review"/>

@@ -27,10 +27,11 @@ exports.review_index_get= (req, res) =>{
 
 
 exports.review_create_get= (req, res) =>{
+    // console.log(req.query)
     Shop.find()
     .then((shops) => {
-        console.log(shops);
-        res.render('review/add', {shops});
+        // console.log(shops);
+        res.render('review/add', {shops, shopId: req.query.shopId});
     })
     .catch((err) => {
         console.log(err);
@@ -69,7 +70,7 @@ exports.review_create_post = (req, res) =>{
         let avgRating = await calculateAvgReviews(review.shop)
             Shop.findByIdAndUpdate(review.shop, {rating: avgRating})
             .then((shop) => {
-                res.redirect("/review/index");
+                res.redirect("/shop/detail?id=" + req.body.shopId);
         })
     })
     .catch((err) => {
