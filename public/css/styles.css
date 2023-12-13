@@ -247,10 +247,6 @@ margin-bottom: 5%;
   max-height: 300px;
 }
 
-.cardImg {
-  max-height: 300px;
-}
-
 .bi-star-fill::before {
  color: #FFD700;
   object-fit: contain;
