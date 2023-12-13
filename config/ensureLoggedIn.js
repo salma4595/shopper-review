@@ -13,8 +13,8 @@
 module.exports = function(req, res, next) {
   // Check if the user is logged in
   if (req.isAuthenticated()) {
-    // Check if the user has the "admin" role
-    if (req.user.userType === 'admin') {
+    // Check if the user has the "user" role
+    if (req.user.userType === 'user' || req.user.userType === 'admin') {
       // If the user is an admin, pass the req/res to the next middleware/route handler
       return next();
     } else {

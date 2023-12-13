@@ -51,11 +51,16 @@ exports.shop_delete_get = (req, res) => {
 
 // get details
 exports.shop_detail_get = (req, res) => {
+    // find review for the specific shop
     // get the shop from DB
     Shop.findById(req.query.id)
     .populate('mall')
     .then((shop) => {
-        res.render('shop/detail', {shop});
+        Review.find({shop: req.query.id})
+        .populate("user")
+        .then((reviews) => {
+            res.render('shop/detail', {shop, reviews});
+        })
     })
     .catch((err) => {
         console.log(err);
