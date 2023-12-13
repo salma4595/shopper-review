@@ -29,7 +29,14 @@ GOOGLE_CALLBACK=
 SECRET=
 CLOUDINARY_URL=
 ```
+`connectionString` is your mongo db connection string obtained from [mongo atlas](https://cloud.mongodb.com/).
+
+`APP_CLIENT_ID` `GOOGLE_SECRET` and `GOOGLE_CALLBACK` are obtained from google cloud console.
+
+`CLOUDINARY_URL` is the API key used to upload images to [cloudinary](https://cloudinary.com/).
+
 * Run `npm i` to install required dependencies.
+  
 * Create a folder in path `public/` name it `ouploads`, this is used by multed to upload images.
 
 ## Wireframes
