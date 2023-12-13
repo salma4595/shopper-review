@@ -5,7 +5,7 @@
     <label class="form-label">Shop</label>
     <select name="shop" class="form-control">
         <% shops.forEach(function (shop) { %>
-          <option value="<%= shop._id %>" <% if (shop._id.toString() === shopId.toString()) { %>selected<% } %>>
+          <option value="<%= shop._id %>" <% if (shop._id === shopId) { %>selected<% } %>>
             <%= shop.name %>
         </option>
         <% }) %>
