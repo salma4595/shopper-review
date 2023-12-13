@@ -1,28 +1,34 @@
-<h2>
+<h2 class="mb-3">
     The Shopper Review: <%= review.shop.name %>
 </h2>
 
 <div class="mb-3">
+    <label class="form-label">User name: </label>  
+
+    <span> <%= review.user.name %></span>
+
+<div class="mb-3">
     <label class="form-label">Rating</label>  
-    <!-- <div class="rating">
-      <label for="star1" ></label>
-      <input type="radio" id="star1" name="rating" class="starBtn" value="1" />
-      <label for="star2"></label>
-      <input type="radio" id="star2" name="rating" class="starBtn" value="2" />
-      <label for="star3"></label>
-      <input type="radio" id="star3" name="rating" class="starBtn" value="3" />
-      <label for="star4"></label>
-      <input type="radio" id="star4" name="rating" class="starBtn" value="4" />
-      <label for="star5"></label>
-      <input type="radio" id="star5" name="rating" class="starBtn" value="5" />
-    </div> -->
-    <div><p id="selectedStar"></p></div>
-   
+    
+    <div class="mb-3">
+        <small><%=review.rating%> stars</small>
+        <% for(let i = 1; i <= 5; i++) {%>
+            <% if(i <= review.rating) { %>
+                <i class="bi bi-star-fill"></i>
+            <%} else{%>
+                <i class="bi bi-star"></i>
+            <%}%>
+        <%}%>
+    </div>
+
     
 
-<div>
-    Comment: <%= review.comment %>
+<div class="mb-3">
+    <label class="form-label">Comment:</label>  
+    <div class="mb-3">
+        <%= review.comment %>
+    </div>
+     
 </div>
 
 
-<div> User name: <%= review.user.name %></div>

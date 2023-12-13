@@ -213,3 +213,7 @@ margin-bottom: 5%;
 .imageMedium {
   max-height: 300px;
 }
+
+.bi-star-fill::before {
+ color: #FFD700;
+}
