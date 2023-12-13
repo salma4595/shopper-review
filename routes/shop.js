@@ -23,6 +23,9 @@ router.post('/add', ensureLoggedInAdmin, upload.fields([{name: 'thumbnail'}, {na
 // GET /detail
 router.get('/detail', shopController.shop_detail_get);
 
+// GET /delete
+router.get('/delete', shopController.shop_delete_get);
+
 // GET /edit
 router.get('/edit', ensureLoggedInAdmin, shopController.shop_edit_get);
 
