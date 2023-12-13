@@ -1,13 +1,28 @@
-<h2> <%= review.user %></h2>
+<h2>
+    The Shopper Review: <%= review.shop.name %>
+</h2>
 
-<div>
-    Rating: <%= review.rating %>/5
-</div>
+<div class="mb-3">
+    <label class="form-label">Rating</label>  
+    <!-- <div class="rating">
+      <label for="star1" ></label>
+      <input type="radio" id="star1" name="rating" class="starBtn" value="1" />
+      <label for="star2"></label>
+      <input type="radio" id="star2" name="rating" class="starBtn" value="2" />
+      <label for="star3"></label>
+      <input type="radio" id="star3" name="rating" class="starBtn" value="3" />
+      <label for="star4"></label>
+      <input type="radio" id="star4" name="rating" class="starBtn" value="4" />
+      <label for="star5"></label>
+      <input type="radio" id="star5" name="rating" class="starBtn" value="5" />
+    </div> -->
+    <div><p id="selectedStar"></p></div>
+   
+    
 
 <div>
     Comment: <%= review.comment %>
 </div>
 
-<div>
-    Shop: <%= review.shop.name %>
-</div>
+
+<div> User name: <%= review.user.name %></div>

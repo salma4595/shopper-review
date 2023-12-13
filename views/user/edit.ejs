@@ -5,27 +5,29 @@
   
 <br>
     <div class="mb-3">
-        <h4> User </h4>
+        <label class="form-label"> User </label>
         <input type="text" name="name" value="<%=user.name %> " class="form-control" />
     </div>
     <div class="mb-3">
-        <h4> Email Address </h4>
+        <label class="form-label"> Email Address </label>
         <input type="email" name="email" value="<%=user.email %>" class="form-control">
     </div>
   
    
     
     <div class="mb-3">
-        <h4>User Type</h4>
-        <select name="userType" class="form-control">
+        <label class="form-label">User Type</label>
+        <input type="text" name="userType" value="<%=user.userType %>" class="form-control" readonly>
+        <!-- <select name="userType" class="form-control">
+
             <option value="user">user</option>
-        </select>
+        </select> -->
     </div>
     <div class="mb-3">
-        <h4>User Type</h4>
+        <label class="form-label" >Is User Admin?</label>
         <select name="isAdmin" class="form-control">
-            <option value=true>true</option>
-            <option value=false>false</option>
+            <option value=true>True</option>
+            <option value=false>False</option>
         </select>
     </div>
 <div class="mb-3">
