@@ -23,7 +23,12 @@ const shopSchema = mongoose.Schema({
     ],
     "workingHours": String,
     "contactNumber": Number,
-    "rating": Number
+    "rating": {
+        type: Number,
+        min: 1,
+        max: 5,
+        default:5
+    },
 },
 {
     timestamps: true
