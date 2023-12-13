@@ -1,35 +1,63 @@
-<h2> <%= mall.nameOfMall %></h2>
 
-<div>
-    About the mall: <%= mall.aboutOfMall %>
-</div>
-<div>
-    Rating: <%= mall.rating %>/5
-</div>
-<div>
-    Location: <%= mall.location %>
-</div>
-<div>
-    Opening Hours: <%= mall.openingHour %>
-</div>
-<div>
-    Contact: <%= mall.PhoneNumber %>
-</div>
-<div>
-    Created@: <%= mall.createdAt %>
-</div>
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="<%=mall.thumbnail%>" alt="image of <%=mall.nameOfMall%>" /></div>
+            <div class="col-md-6">
+                <h1 class="display-5 fw-bolder"><%=mall.nameOfMall%></h1>
+                <h3><a href="/mall/detail?id=<%=mall._id%>"><%=mall.shop%></a></h3>
+                <div class="fs-5 mb-5">
+                    <!-- Mall description -->
+                    <div class="text-muted">
+                        <% for(let i = 1; i <= 5; i++) {%>
+                            <% if(i <= mall.rating) { %>
+                                <i class="bi bi-star-fill"></i>
+                            <%} else{%>
+                                <i class="bi bi-star"></i>
+                            <%}%>
+                        <%}%>    
+                    </div>
+                </div>
+                <p class="lead"><%=mall.aboutOfMall%></p>
+                <span>Location</span><p class="lead"><%=mall.location%></p>
+               <span>Opening Hours</span><p class="lead"><%=mall.openingHour%></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Shop -->
 
-<div>
-    Updated@: <%= mall.updatedAt %>
-</div>
-
-<div>
-    <h2>Shops:</h2>
-    <hr>
-    <% shops.forEach(function(shop) {%>
-        <p><%= shop.name %></p>
-        
-    <%})%>
-    
-   
-</div>
+<% shops.forEach((shop) => { %>
+    <section>
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="..." class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                            <h5 class="card-title"><a href="/shop/detail?id=<%=shop._id%>"><%=shop.name%></a></h5>
+                            <!-- Shop stars -->
+                            <div class="text-muted">
+                                <% for(let i = 1; i <= 5; i++) {%>
+                                    <% if(i <= shop.rating) { %>
+                                        <i class="bi bi-star-fill"></i>
+                                    <%} else{%>
+                                        <i class="bi bi-star"></i>
+                                    <%}%>
+                                <%}%>    
+                            </div>
+                            <p class="card-text"><%=shop.comment%></p>
+                            <p class="card-text"><small class="text-muted">Created at <%=shop.createdAt%></small></p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<%})%>
