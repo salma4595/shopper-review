@@ -17,7 +17,7 @@ router.get("/index", MallCntrl.mall_index_get);
 router.get("/detail", MallCntrl.mall_show_get);
 router.get("/delete", ensureLoggedInAdmin, MallCntrl.mall_delete_get);
 router.get("/edit", ensureLoggedInAdmin, MallCntrl.mall_edit_get);
-router.post("/update", ensureLoggedInAdmin, MallCntrl.mall_update_post);
+router.post("/update", ensureLoggedInAdmin, upload.fields([{name: 'thumbnail'}, {name: 'mallImages'}]), MallCntrl.mall_update_post);
 
 
 
