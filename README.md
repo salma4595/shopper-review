@@ -29,3 +29,27 @@ CLOUDINARY_URL=
 ```
 * Run `npm i` to install required dependencies.
 * Create a folder in path `public/` name it `ouploads`, this is used by multed to upload images.
+
+## Wireframes
+
+https://i.imgur.com/BZKXJB2.jpeg
+
+https://i.imgur.com/sz8qDCw.jpeg
+
+https://i.imgur.com/D4IBSlK.jpeg
+
+https://i.imgur.com/SVjrPGa.jpeg
+
+https://i.imgur.com/4BaK45W.jpg
+
+https://i.imgur.com/Kl4yEiZ.jpg
+
+https://i.imgur.com/u087skf.jpg
+
+https://i.imgur.com/c16p1as.jpg
+
+https://i.imgur.com/CeKBCQ2.jpeg
+
+https://i.imgur.com/SVjrPGa.jpeg
+
+
