@@ -16,7 +16,6 @@ const port = process.env.PORT;
 // url encoded config
 app.use(express.urlencoded({extended: true}));
 
-
 require('./config/passport');
 ///we can configure and mount the session middleware
 app.use(session({
@@ -24,7 +23,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }
-)   )
+));
 
 ///mount passport
 app.use(passport.initialize());
@@ -39,15 +38,12 @@ app.use(function (req, res, next) {
 app.set("view engine", "ejs");
 
 //Node.js to look for all the files (CSS,JS,AuDIO,Vedios, Images)
-app.use(express.static("public"));
-
+app.use(express.static('public'));
 //Nodejs to look into views folder for the file named layout.ejs
 app.use(expressLayouts)
 
 // connect to db
 const db = require('./config/db');
-
-
 
 // //import and configure routes
 const indexRouter = require('./routes/index');
@@ -60,11 +56,6 @@ app.use("/", indexRouter);
 app.use('/mall', mallRouter);
 app.use('/user', userRouter)
 app.use('/review', reviewRouter)
-
-
-
-
-
 
 // Setup server
 const PORT = process.env.PORT;

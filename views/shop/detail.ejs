@@ -1,18 +1,59 @@
-<h2> <%= shop.name %></h2>
-
-<div>
-    Rating: <%= shop.rating %>/5
-</div>
-<div>
-    Location: <%= shop.location %>
-</div>
-<div>
-    Opening Hours: <%= shop.workingHours %>
-</div>
-<div>
-    Contact Number: <%= shop.contactNumber %>
-</div>
-
-<div>
-    Mall: <%= shop.mall.nameOfMall %>
-</div>
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="<%=shop.thumbnail%>" alt="image of <%=shop.name%>" /></div>
+            <div class="col-md-6">
+                <h1 class="display-5 fw-bolder"><%=shop.name%></h1>
+                <h3><a href="/mall/detail?id=<%=shop.mall._id%>"><%=shop.mall.nameOfMall%></a></h3>
+                <div class="fs-5 mb-5">
+                    <!-- Shop description -->
+                    <div class="text-muted">
+                        <% for(let i = 1; i <= 5; i++) {%>
+                            <% if(i <= shop.rating) { %>
+                                <i class="bi bi-star-fill"></i>
+                            <%} else{%>
+                                <i class="bi bi-star"></i>
+                            <%}%>
+                        <%}%>    
+                    </div>
+                </div>
+                <p class="lead"><%=shop.description%></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Reviews -->
+<% reviews.forEach((review) => { %>
+    <section>
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="..." class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                            <h5 class="card-title"><%=review.user.name%></h5>
+                            <!-- Review stars -->
+                            <div class="text-muted">
+                                <% for(let i = 1; i <= 5; i++) {%>
+                                    <% if(i <= review.rating) { %>
+                                        <i class="bi bi-star-fill"></i>
+                                    <%} else{%>
+                                        <i class="bi bi-star"></i>
+                                    <%}%>
+                                <%}%>    
+                            </div>
+                            <p class="card-text"><%=review.comment%></p>
+                            <p class="card-text"><small class="text-muted">Created at <%=review.createdAt%></small></p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<%})%>
