@@ -2,13 +2,13 @@
 
 <form method="POST" action="/shop/edit">
 
-    <div>
-        <label> name </label>
-        <input type="text" name="name" value="<%=shop.name %>" />
+    <div class="mb-3">
+        <label class="form-label"> Mall Name </label>
+        <input type="text" name="name" value="<%=shop.name %>" class="form-control" />
     </div>
-    <div>
-        <label> Description </label>
-        <textarea name="description"><%=shop.description %></textarea>
+    <div class="mb-3">
+        <label class="form-label"> Description </label>
+        <textarea name="description" class="form-control"><%=shop.description %></textarea>
     </div>
     <div class="mb-3">
         <label class="form-label">Category</label>
@@ -24,27 +24,29 @@
          
         </select>
     </div>
-    <div>
-        <label> rating </label>
-        <input type="number" name="rating" value="<%=shop.rating %>">
+    <div class="mb-3">
+        <label class="form-label"> Rating </label>
+        <input type="number" name="rating" value="<%=shop.rating %>" class="form-control">
     </div>
     <div>
-        <label> location </label>
-        <input type="text" name="location" value="<%=shop.location %>" />
+        <label class="form-label"> Location </label>
+        <input type="text" name="location" value="<%=shop.location %>" class="form-control" />
     </div>
-    <div>
-        <label> Working Hours </label>
-        <input type="text" name="workingHours" value="<%=shop.workingHours %>" />
+    <br>
+    <div class="mb-3">
+        <label class="form-label"> Opening Hours </label>
+        <input type="text" name="workingHours" value="<%=shop.workingHours %>" class="form-control"/>
     </div>
 
-    <div>
-        <label> Phone Number </label>
-        <input type="number" name="contactNumber" value="<%=shop.contactNumber %>" />
+    <div class="mb-3">
+        <label class="form-label"> Phone Number </label>
+        <input type="number" name="contactNumber" value="<%=shop.contactNumber %>" class="form-control" />
     </div>
 
 
     <input type="hidden" name="id" value="<%=shop._id%>"/>
     <div>
-        <button>Update shop</button>
+        <button class="btn btn-primary mt-2">Update shop</button>
     </div>
+<br>
 </form>
