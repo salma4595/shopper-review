@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
+    mall: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Mall',
+    },
     shop: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Shop',

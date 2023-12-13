@@ -56,27 +56,59 @@ async function calculateAvgReviews(shopId) {
         console.log(err);
         res.send("Please try again later!!")
 })
-return avgReview;
-
+    return avgReview;
 }
 
-
-exports.review_create_post = (req, res) =>{
-    console.log(req.body)
-    let review = new Review(req.body); // depend on controllers
-    review.save()  // depend on constant 
-    .then(async () => {
-        // get the current shop and update the average review
-        let avgRating = await calculateAvgReviews(review.shop)
-            Shop.findByIdAndUpdate(review.shop, {rating: avgRating})
-            .then((shop) => {
-                res.redirect("/shop/detail?id=" + req.body.shopId);
-        })
+async function calculateMallAvgReviews(mallId) {
+    // get number of reviews in the store
+    let numberOfReviews = 0;
+    let totalStars = 0;
+    let avgReview = 0;
+    await Review.find({mall: mallId})
+    .then((reviews) => {
+        numberOfReviews = reviews.length;
+        // get the total number of stars for the reviews
+        for(const review of reviews) {
+            totalStars += review.rating;
+        }
+        avgReview = Math.floor(totalStars / numberOfReviews);
     })
     .catch((err) => {
         console.log(err);
         res.send("Please try again later!!")
 })
+    return avgReview;
+}
+
+
+
+exports.review_create_post = async (req, res) =>{
+    Shop.findById(req.body.shop)
+    .then((shop) => {
+        req.body.mall = shop.mall;
+        let review = new Review(req.body); // depend on controllers
+        review.save()  // depend on constant 
+        .then(async () => {
+            // get the current shop and update the average review
+            let avgRating = await calculateAvgReviews(review.shop)
+                Shop.findByIdAndUpdate(review.shop, {rating: avgRating})
+                .then(async () => {
+                    let avgMallRating = await calculateMallAvgReviews(req.body.mall)
+                    Mall.findByIdAndUpdate(req.body.mall, {rating: avgMallRating})
+                    .then(() => {
+                        res.redirect("/shop/detail?id=" + req.body.shopId);
+                    })
+                // })
+                // .then((shop) => {
+                //     res.redirect("/shop/detail?id=" + req.body.shopId);
+            })
+        })
+        .catch((err) => {
+            console.log(err);
+            res.send("Please try again later!!")
+    })
+    })
+    
 }
 
 
