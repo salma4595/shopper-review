@@ -1,38 +1,53 @@
 <form action="/shop/add" method="POST" enctype="multipart/form-data">
+
+<div class="mb-3">
     <label for="name" class="form-label">Shop Name</label>
     <input type="text" name="name" class="form-control">
-    <div>
-        <label class="form-label">Mall</label>
+</div>
+
+    <div class="mb-3">
+        <label class="form-label">Mall Name</label>
         <select name="mall" class="form-control">
             <% malls.forEach(function (mall) { %>
                 <option value="<%= mall._id %>"><%= mall.nameOfMall %></option>
             <% }) %>
         </select>
     </div>
+    <div class="mb-3">
     <label for="category" class="form-label">Category</label>
     <input type="text" name="category" class="form-control">
+    </div>
 
+<div class="mb-3">
     <label for="location" class="form-label">Location</label>
     <input type="text" name="location" class="form-control">
-
+</div>
+<div class="mb-3">
     <label for="description" class="form-label">Description</label>
     <textarea type="text" name="description" class="form-control"></textarea>
-
+</div>
+<div class="mb-3">
     <label for="workingHours" class="form-label">Working Hours</label>
     <input type="text" name="workingHours" class="form-control">
-
+</div>
+<div class="mb-3">
     <label for="contactNumber" class="form-label">Contact Number</label>
     <input type="text" name="contactNumber" class="form-control">
-
+</div>
+<div class="mb-3">
     <label for="thumbnail" class="form-label">Thumbnal picture of the shop</label>
     <input type="file" class="form-control" id="image" name="thumbnail" accept="image/png, image/jpeg"/>   
-
+</div>
+<div class="mb-3">
     <label for="shopImages" class="form-label">Images of the shop</label>
     <input type="file" class="form-control" id="images" name="shopImages" accept="image/png, image/jpeg" multiple/>    
-    <br>
+</div>
+<div class="mb-3">
     <!-- THIS IS FOR TESTING ONLY SHOULD BE REMOVED FOR PRODUCTION -->
     <label for="rating" class="form-label">Rating</label>
     <input type="number" class="form-control" name="rating"/>
-    <br>
-    <input class="btn btn-primary mt-2" type="submit" value="Add new shop"/>
+</div>
+<div class="mb-3">
+    <input class="btn btn-primary mt-2" type="submit" value="Add new Shop"/>
+    </div>
 </form>
