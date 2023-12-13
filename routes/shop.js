@@ -30,6 +30,6 @@ router.get('/edit', ensureLoggedInAdmin, shopController.shop_edit_get);
 router.post('/edit', ensureLoggedInAdmin, upload.fields([{name: 'thumbnail'}, {name: 'shopImages'}]), shopController.shop_edit_post);
 
 // GET /delete
-router.get('/delete', ensureLoggedInAdmin, shopController.shop_delete_get);
+router.get('/image/delete', ensureLoggedInAdmin, shopController.shop_image_delete_get);
 
 module.exports = router;

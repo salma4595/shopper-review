@@ -113,3 +113,18 @@ exports.shop_add_post = async (req, res) => {
         console.log(err);
     })
 }
+
+exports.shop_image_delete_get = (req, res) => {
+    // /shop/image/delete?index=xxx&shop=xxxx
+    Shop.findById(req.query.shop)
+    .then((shop) => {
+        shop.images.splice(req.query.index, 1);
+        shop.save()
+        .then(() => {
+            res.redirect(`/shop/edit?id=${req.query.shop}`);
+        })
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+}
