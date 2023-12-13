@@ -1,5 +1,5 @@
 # shopper-review
-A Web App for the users experience for the shopping Malls in Bahrain
+A Web App for the users experience for the shopping Malls in Bahrain where users can lookup at the malls and shops directories and add their reviews on different stores.
 
 ## How to use
 ### As an admin you can do the following:
