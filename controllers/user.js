@@ -91,14 +91,18 @@ exports.user_edit_post = (req,res) => {
 
 // show profile for logged in user
 exports.user_profile_get = (req, res) => {
-    res.render("user/profile");
+    res.render("user/dashboard");
 }
 
 exports.user_profile_update_post = async (req, res) => {
-    console.log(req.file.avatar);
-    let result = await upload.upload_single(req.file.avatar.path);
-    console.log('after result')
-    console.log(user_id);
+    let result = await upload.upload_single(req.file.path);
+    console.log(req.user._id);
     console.log(result.url);
-    // User.findById(user_id);
+    User.findByIdAndUpdate(req.user._id, {"avatar": result.url})
+    .then(() => {
+        res.redirect('/user/dashboard');
+    })
+    .catch((err) => {
+        console.log(err);
+    })
 }
