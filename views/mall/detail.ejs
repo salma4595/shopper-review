@@ -15,7 +15,7 @@
                             <%} else{%>
                                 <i class="bi bi-star"></i>
                             <%}%>
-                        <%}%>    
+                        <%}%>
                     </div>
                 </div>
                 <p class="lead"><%=mall.aboutOfMall%></p>
@@ -25,6 +25,24 @@
         </div>
     </div>
 </section>
+
+
+<!-- Images of the Mall -->
+<div class="container px-4 px-lg-5">
+    <div class="row py-5">
+        <% mall.images.forEach(function(image) {%>
+            <div class="col-sm-4">
+                <div class="card mx-auto mt-3">
+                    <a href="<%=image%>" target="_blank">
+                        <img src="<%= image%>" class="card-img-top" alt="a picture of <%=mall.nameOfMall%>">
+                    </a>
+                </div>
+            </div>
+        <%})%>
+    </div>
+</div>
+
+
 <!-- Shop -->
 
 <% shops.forEach((shop) => { %>
