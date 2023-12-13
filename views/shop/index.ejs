@@ -9,9 +9,9 @@
 <body>
     <div class="row">
         <% shops.forEach(function(shop) {%>
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <div class="card mx-auto mt-3">
-                    <img src="<%= shop.thumbnail%>" class="card-img-top imageMedium" alt="...">
+                    <img src="<%= shop.thumbnail%>" class="card-img-top imageMedium" alt="image of <%=shop.name%>">
                     <div class="card-body">
                         <h5 class="card-title"><%=shop.name%></h5>
                         <p class="card-text">
