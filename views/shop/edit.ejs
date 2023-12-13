@@ -1,6 +1,6 @@
 <h1>Edit Shop</h1>
 
-<form method="POST" action="/shop/edit">
+<form method="POST" action="/shop/edit" enctype="multipart/form-data">
 
     <div class="mb-3">
         <label class="form-label"> Mall Name </label>
@@ -24,10 +24,6 @@
          
         </select>
     </div>
-    <div class="mb-3">
-        <label class="form-label"> Rating </label>
-        <input type="number" name="rating" value="<%=shop.rating %>" class="form-control">
-    </div>
     <div>
         <label class="form-label"> Location </label>
         <input type="text" name="location" value="<%=shop.location %>" class="form-control" />
@@ -43,10 +39,37 @@
         <input type="number" name="contactNumber" value="<%=shop.contactNumber %>" class="form-control" />
     </div>
 
-
+    <!-- Thumbnail -->
+    <div class="mb-3">
+        <label class="form-label" for="thumbnail">Shop thumbnail</label><br>
+        <%if(shop.thumbnail) {%>
+            <img src="<%=shop.thumbnail%>" class="imageSmall" alt="thumbnail of <%=shop.name%>">
+        <%} else {%>
+            <h4>Thumbnail is not available for this shop</h4>
+            <%}%>
+        <input type="file" class="form-control my-2" name="thumbnail" accept="image/png, image/jpeg"/>   
+    </div>
+    <!-- shop images -->
+    <div class="mb-3">
+        <label for="shopImages" class="form-label">Images of the shop</label><br>
+        <% if(shop.images.length > 0) {%>
+            <div class="card-group">
+            <% shop.images.forEach(function(image, i) {%>
+                <div class="card">
+                    <img class="imageSmall mx-1 card-img-top" src="<%=image%>" alt="">
+                    <a id="<%=i%>" class="card-title">delete</a>
+                </div>
+                <%})%>
+            </div>
+        <%} else {%>
+            <h4>No images were found for this shop</h4>
+        <%}%>
+        <input type="file" class="form-control my-2" id="images" name="shopImages" accept="image/png, image/jpeg" multiple/>    
+    </div>
+    
     <input type="hidden" name="id" value="<%=shop._id%>"/>
     <div>
-        <button class="btn btn-primary mt-2">Update shop</button>
+        <input class="btn btn-primary mt-2" type="submit" value="Update shop"/>
     </div>
 <br>
 </form>

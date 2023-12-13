@@ -212,4 +212,14 @@ margin-bottom: 5%;
 
 .imageMedium {
   max-height: 300px;
+  object-fit: contain;
+}
+
+.imageSmall {
+  max-height: 150px;
+  object-fit: contain;
+}
+
+#selectThumbnailShop {
+  margin-top: 10px;
 }
