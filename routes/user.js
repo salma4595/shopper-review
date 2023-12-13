@@ -28,8 +28,8 @@ router.post('/edit',ensureLoggedInAdmin, userCtrl.user_edit_post);
 // delete data
 router.get('/delete',ensureLoggedInAdmin, userCtrl.user_delete_get);
 // GET /user/profile
-router.get('/profile', ensureLoggedIn, userCtrl.user_profile_get);
+router.get('/dashboard', ensureLoggedIn, userCtrl.user_profile_get);
 // POST /user/profile/update
-router.post('/profile/update', ensureLoggedIn, upload.single('avatar'), userCtrl.user_profile_update_post);
+router.post('/update', ensureLoggedIn, upload.single('avatar'), userCtrl.user_profile_update_post);
 
 module.exports = router

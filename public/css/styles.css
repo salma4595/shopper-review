@@ -129,3 +129,8 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary{
 .userAvatar {
   max-height: 100px;
 }
+
+.dashboardWelcomeMsg {
+  text-align: center;
+  margin-bottom: 30px;
+}
