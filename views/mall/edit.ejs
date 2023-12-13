@@ -2,17 +2,17 @@
 
 <form method="POST" action="/mall/update">
 
-    <div>
-        <label> About the Mall </label>
-        <textarea name="aboutOfMall"><%=mall.aboutOfMall %></textarea>
+    <div class="mb-3">
+        <label class="form-label"> description </label>
+        <textarea name="aboutOfMall" class="form-control"><%=mall.aboutOfMall %></textarea>
     </div>
-    <div>
-        <label> name </label>
-        <input type="text" name="nameOfMall" value="<%=mall.nameOfMall %>" />
+    <div class="mb-3">
+        <label class="form-label"> Mall Name </label>
+        <input type="text" name="nameOfMall" value="<%=mall.nameOfMall %>" class="form-control"/>
     </div>
-    <div>
-        <label>Rating</label>
-        <select name="rating">
+    <div class="mb-3">
+        <label class="form-label">Rating</label>
+        <select name="rating" class="form-select" >
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -22,24 +22,25 @@
     </div>
   
    
-    <div>
-        <label> location </label>
-        <input type="text" name="location" value="<%=mall.location %>" />
+    <div class="mb-3">
+        <label class="form-label"> Location </label>
+        <input type="text" name="location" value="<%=mall.location %>" class="form-control" />
     </div>
 
-    <div>
-        <label> openingHour </label>
-        <input type="text" name="openingHour" value="<%=mall.openingHour %>" />
+    <div class="mb-3">
+        <label class="form-label"> Opening Hour </label>
+        <input type="text" name="openingHour" value="<%=mall.openingHour %>" class="form-control"/>
     </div>
 
-    <div>
-        <label> Contact </label>
-        <input type="text" name="PhoneNumber" value="<%=mall.PhoneNumber %>" />
+    <div class="mb-3">
+        <label class="form-label"> Contact </label>
+        <input type="text" name="PhoneNumber" value="<%=mall.PhoneNumber %>" class="form-control" />
     </div>
 
 
-    <input type="hidden" name="id" value="<%=mall._id%>"/>
-    <div>
-        <button>Update mall</button>
+    <input type="hidden" name="id" value="<%=mall._id%>" class="form-control"/>
+
+    <div class="mb-3">
+        <button class="btn btn-primary mt-2">Update mall</button>
     </div>
 </form>
