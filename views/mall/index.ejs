@@ -4,7 +4,7 @@
 <hr>
 
 
-<% if (user &&user.isAdmin === true ){ %>
+<% if (true){ %>
 
     
 <div class="row">
@@ -38,6 +38,7 @@
 
 
 <br>
+<%if(user && user.isAdmin == true) {%>
 
 <div class=" table-responsive-sm">
 <table class="table table-bordered table-hover">
@@ -81,7 +82,7 @@
         <%});%>
     <tbody></tbody>    
 </table>
-
+<%}%>
 </div>
 
 <% }else if (user) { %>
