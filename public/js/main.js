@@ -1,4 +1,3 @@
-console.log('hello')      
 const radioButtons = document.querySelectorAll('input[name="rating"]');
 let selectedStars;
 for (const radioButton of radioButtons) {
