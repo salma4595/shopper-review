@@ -41,17 +41,31 @@ CLOUDINARY_URL=
 
 ## Wireframes
 
+### Home page
+
 ![Home](https://github.com/iAliJ/shopper-review/assets/47180374/f23c3878-3952-4060-89f1-02445d3e10e1)
+
+### Malls directory page
 
 ![Malls Directory](https://github.com/iAliJ/shopper-review/assets/47180374/9b7d2700-9b0d-4a37-9724-5cfb25536769)
 
+### Store directory page
+
 ![Store Directory](https://github.com/iAliJ/shopper-review/assets/47180374/14595aea-83c5-485d-a3ec-2989d03b4072)
+
+### Mall details
 
 ![Mall details](https://github.com/iAliJ/shopper-review/assets/47180374/09572f1e-3c84-4571-9dc1-2a4426ff2e51)
 
+### Shop details
+
 ![Shop details](https://github.com/iAliJ/shopper-review/assets/47180374/88c9f18b-e9cb-43ee-bb3b-2cc279bb6043)
 
+### Add mall page
+
 ![Add Mall](https://github.com/iAliJ/shopper-review/assets/47180374/81d0533e-0e7a-40f3-be56-bc43eed572ed)
+
+### Add shop page
 
 ![Add Shop](https://github.com/iAliJ/shopper-review/assets/47180374/2244a1b4-3337-4686-b11a-e602c3b539df)
 
