@@ -260,3 +260,8 @@ margin-bottom: 5%;
 #selectThumbnailShop {
   margin-top: 10px;
 }
+
+.detailImg {
+  height: 200px; /* Set the desired height */
+  object-fit: cover;
+}
