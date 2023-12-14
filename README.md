@@ -41,24 +41,20 @@ CLOUDINARY_URL=
 
 ## Wireframes
 
-https://i.imgur.com/BZKXJB2.jpeg
+![Home](https://github.com/iAliJ/shopper-review/assets/47180374/f23c3878-3952-4060-89f1-02445d3e10e1)
 
-https://i.imgur.com/sz8qDCw.jpeg
+![Malls Directory](https://github.com/iAliJ/shopper-review/assets/47180374/9b7d2700-9b0d-4a37-9724-5cfb25536769)
 
-https://i.imgur.com/D4IBSlK.jpeg
+![Store Directory](https://github.com/iAliJ/shopper-review/assets/47180374/14595aea-83c5-485d-a3ec-2989d03b4072)
 
-https://i.imgur.com/SVjrPGa.jpeg
+![Mall details](https://github.com/iAliJ/shopper-review/assets/47180374/09572f1e-3c84-4571-9dc1-2a4426ff2e51)
 
-https://i.imgur.com/4BaK45W.jpg
+![Shop details](https://github.com/iAliJ/shopper-review/assets/47180374/88c9f18b-e9cb-43ee-bb3b-2cc279bb6043)
 
-https://i.imgur.com/Kl4yEiZ.jpg
+![Add Mall](https://github.com/iAliJ/shopper-review/assets/47180374/81d0533e-0e7a-40f3-be56-bc43eed572ed)
 
-https://i.imgur.com/u087skf.jpg
+![Add Shop](https://github.com/iAliJ/shopper-review/assets/47180374/2244a1b4-3337-4686-b11a-e602c3b539df)
 
-https://i.imgur.com/c16p1as.jpg
-
-https://i.imgur.com/CeKBCQ2.jpeg
-
-https://i.imgur.com/SVjrPGa.jpeg
+![Add Review](https://github.com/iAliJ/shopper-review/assets/47180374/771742c1-ad2f-4708-8b3a-86767b935e87)
 
 
