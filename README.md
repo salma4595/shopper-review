@@ -1,6 +1,10 @@
 # shopper-review
 A Web App for the users experience for the shopping Malls in Bahrain where users can lookup at the malls and shops directories and add their reviews on different stores.
 
+## Demo
+
+App demo on Render: https://shopper-review-app.onrender.com/
+
 # Tasks and features management
 
 Trello link: https://trello.com/b/Z4JzTQMq/main-project
