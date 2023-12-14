@@ -18,6 +18,14 @@ A Web App for the users experience for the shopping Malls in Bahrain where users
 
 <img src="https://i.imgur.com/ubSIR4m.png" width="600">
 
+## Technology used
+
+* `nodejs` and `expressjs` to run the server and api
+* `ejs` engine for front end
+* `google authentication` to create users and login authentications
+* `multer` to upload images to the server
+* `cloudinary` to upload images from the server to to the cloud
+
 ## How to run
 * Setup `.env` file using the following template:
 ```
