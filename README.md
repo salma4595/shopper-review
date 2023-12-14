@@ -18,6 +18,14 @@ A Web App for the users experience for the shopping Malls in Bahrain where users
 
 <img src="https://i.imgur.com/ubSIR4m.png" width="600">
 
+## Technology used
+
+* `nodejs` and `expressjs` to run the server and api
+* `ejs` engine for front end
+* `google authentication` to create users and login authentications
+* `multer` to upload images to the server
+* `cloudinary` to upload images from the server to to the cloud
+
 ## How to run
 * Setup `.env` file using the following template:
 ```
@@ -41,24 +49,34 @@ CLOUDINARY_URL=
 
 ## Wireframes
 
-https://i.imgur.com/BZKXJB2.jpeg
+### Home page
 
-https://i.imgur.com/sz8qDCw.jpeg
+![Home](https://github.com/iAliJ/shopper-review/assets/47180374/f23c3878-3952-4060-89f1-02445d3e10e1)
 
-https://i.imgur.com/D4IBSlK.jpeg
+### Malls directory page
 
-https://i.imgur.com/SVjrPGa.jpeg
+![Malls Directory](https://github.com/iAliJ/shopper-review/assets/47180374/9b7d2700-9b0d-4a37-9724-5cfb25536769)
 
-https://i.imgur.com/4BaK45W.jpg
+### Store directory page
 
-https://i.imgur.com/Kl4yEiZ.jpg
+![Store Directory](https://github.com/iAliJ/shopper-review/assets/47180374/14595aea-83c5-485d-a3ec-2989d03b4072)
 
-https://i.imgur.com/u087skf.jpg
+### Mall details
 
-https://i.imgur.com/c16p1as.jpg
+![Mall details](https://github.com/iAliJ/shopper-review/assets/47180374/09572f1e-3c84-4571-9dc1-2a4426ff2e51)
 
-https://i.imgur.com/CeKBCQ2.jpeg
+### Shop details
 
-https://i.imgur.com/SVjrPGa.jpeg
+![Shop details](https://github.com/iAliJ/shopper-review/assets/47180374/88c9f18b-e9cb-43ee-bb3b-2cc279bb6043)
+
+### Add mall page
+
+![Add Mall](https://github.com/iAliJ/shopper-review/assets/47180374/81d0533e-0e7a-40f3-be56-bc43eed572ed)
+
+### Add shop page
+
+![Add Shop](https://github.com/iAliJ/shopper-review/assets/47180374/2244a1b4-3337-4686-b11a-e602c3b539df)
+
+![Add Review](https://github.com/iAliJ/shopper-review/assets/47180374/771742c1-ad2f-4708-8b3a-86767b935e87)
 
 
