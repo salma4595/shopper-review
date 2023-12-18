@@ -47,15 +47,17 @@ const db = require('./config/db');
 
 // //import and configure routes
 const indexRouter = require('./routes/index');
-const mallRouter= require("./routes/mall");
+const mallRouter = require("./routes/mall");
 const shopRouter = require('./routes/shop');
 const userRouter = require('./routes/user');
-const reviewRouter=require('./routes/review')
-app.use('/shop', shopRouter);
+const reviewRouter = require('./routes/review');
+const searchRouter = require('./routes/search');
 app.use("/", indexRouter);
+app.use('/shop', shopRouter);
 app.use('/mall', mallRouter);
-app.use('/user', userRouter)
-app.use('/review', reviewRouter)
+app.use('/user', userRouter);
+app.use('/review', reviewRouter);
+app.use('/search', searchRouter);
 
 // Setup server
 const PORT = process.env.PORT;
