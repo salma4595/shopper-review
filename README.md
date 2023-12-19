@@ -3,6 +3,8 @@ A Web App for the users experience for the shopping Malls in Bahrain where users
 
 ## Demo
 
+![app screenshot](https://github.com/iAliJ/shopper-review/assets/47180374/42759cdd-35ba-447c-9cd9-9ae77666fc43)
+
 App demo on Render: https://shopper-review-app.onrender.com/
 
 # Tasks and features management
