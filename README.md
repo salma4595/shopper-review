@@ -53,7 +53,7 @@ CLOUDINARY_URL=
 
 * Run `npm i` to install required dependencies.
   
-* Create a folder in path `public/` name it `ouploads`, this is used by multer to upload images.
+* Create a folder in path `public/` name it `uploads`, this is used by multer to upload images.
 
 ## Wireframes
 
