@@ -28,7 +28,7 @@ margin: 10px;
 font-size: 15px;
 } */
 
-nav.navbar.navbar-expand-lg.bg-body-tertiary{
+.navbar{
     background-color: var(--wrong);
   
 }
@@ -101,7 +101,7 @@ carousel-item, .carousel-item active{
     height: 750px;
     background: rgba(0, 0, 0, 0.5);
 }
-@media screen and (min-width:320px) and (max-width:480px){
+/* @media screen and (min-width:320px) and (max-width:480px){
   .imageCara{
   width: 80%;
   }};
@@ -110,10 +110,7 @@ carousel-item, .carousel-item active{
     .imageCara{
     width:60%;
     }
-  }
-
-    
-
+  } */
 
 .textOverImage{
     display: flex;
@@ -133,7 +130,7 @@ carousel-item, .carousel-item active{
     font-size: 100px;
 }
 
-@media screen and (min-width:320px) and (max-width:480px){
+/* @media screen and (min-width:320px) and (max-width:480px){
   .textOverImage{
   width: 80%;
   }};
@@ -142,7 +139,7 @@ carousel-item, .carousel-item active{
     .textOverImage{
     width:60%;
     }
-  }
+  } */
 
 .carousel-inner:hover .textOverImage{
     opacity: 10;
